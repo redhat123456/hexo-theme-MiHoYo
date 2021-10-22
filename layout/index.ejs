@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/index.css">
+<div class="paginator">
+  <div class="content">
+    <div class="contain-box1">
+
+      <div class="hd logodiv">
+        <%- image_tag(theme.gender,{class: 'logopng' , alt: 'logo' , src: theme.img_src}) %>
+          <p class="logot">
+            <%= theme.logo_title %>
+              <span class="logo_2"></span>
+              <h3 class="words" style="font-weight: bold;font-family: Georgia;">
+                <%= theme.words %>
+              </h3>
+          </p>
+      </div>
+      <%- partial('./common/nav') %>
+
+    </div>
+    <div class="contain-box2">
+      <%- partial('./common/index-post') %>
+    </div>
+  </div>
+</div>

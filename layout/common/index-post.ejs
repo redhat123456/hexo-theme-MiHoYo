@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/index-post.css">
+<% if (page.posts.length> 0) { %>
+  <div class="recent-posts">
+    <p class="p1">文章列表</p>
+    <div class="recent-post-item">
+      <ul class="notice-list" id="notice-1">
+        <% page.posts.sort('date', -1).limit(10).each(post=> { %>
+          <li>
+            <a href="<%=url_for(post.path)%>">
+              <%=post.title%>
+            </a>
+            <p class="notice-time" datetime="<%=post.date.toJSON()%>">
+              <%=date(post.date)%>
+            </p>
+          </li>
+          <% }); %>
+      </ul>
+
+    </div>
+
+  </div>
+  <% } %>

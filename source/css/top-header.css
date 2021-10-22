@@ -1,0 +1,172 @@
+* {
+  font-family: 'Microsoft Yahei';
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#top-bar.fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#top-bar {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 20;
+  width: 100%;
+  top: 48px;
+  height: 62px;
+  min-width: 1200px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  color: white;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -ms-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+}
+
+.goto-top {
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  cursor: pointer;
+  background-image: url(https://static-event.benghuai.com/new_mihoyo_homepage/images/index/top1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-imag 0.3s, opacity 0.3s;
+}
+
+.goto-top:hover {
+  background-image: url(https://static-event.benghuai.com/new_mihoyo_homepage/images/index/top2.png);
+}
+
+.goto-top img {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.goto-top p {
+  position: absolute;
+  top: 32px;
+  left: 57px;
+  font-size: 13px;
+}
+
+.bar-list {
+  position: absolute;
+  width: 800px;
+  top: 18px;
+  right: 0;
+  font-size: 0;
+}
+
+.bar-list li {
+  display: inline-block;
+  position: relative;
+}
+
+.bar-list p {
+  display: inline-block;
+}
+
+.bar-list a {
+  padding: 35px 0 25px 0;
+  opacity: 1;
+  -webkit-transition: color 0.3s, opacity 0.3s;
+  -moz-transition: color 0.3s, opacity 0.3s;
+  -o-transition: color 0.3s, opacity 0.3s;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.bar-p1 {
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.bar-p2 {
+  font-size: 13px;
+  margin-right: 2px;
+}
+
+.bar-p3 {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bar-list-1 a:hover {
+  color: #47bcff;
+}
+
+.bar-list li ul {
+  /*opacity: 0;*/
+  display: none;
+  position: absolute;
+  top: 44px;
+  left: -26px;
+  padding: 15px 15px;
+  background: rgba(0, 0, 0, 0.6);
+  /*display: none;*/
+  z-index: 100;
+}
+
+.bar-list li:hover ul,
+li ul:hover {
+  display: block;
+}
+
+.bar-list li ul li {
+  border-right: 0px;
+  float: none !important;
+  background: none !important;
+  border-bottom: 1px solid #1e324a;
+  width: 100px;
+  list-style: none;
+  position: relative;
+}
+
+.bar-list li ul li a {
+  background-position: 0px 0px;
+  height: 24px;
+  line-height: 30px;
+  border-left: 0px;
+  border-top: 0px;
+  padding: 10px 0px;
+  font-size: 14px;
+  padding-right: 24px;
+}
+
+.bar-list li .dropdown {
+  width: 7px;
+  height: 5px;
+  background: url(https://static-event.benghuai.com/new_mihoyo_homepage/images/nav/drop-down.png)
+    no-repeat;
+  margin: 15px 0px 0px 0px;
+  text-align: left;
+  position: relative;
+  position: absolute;
+  right: 20px;
+}

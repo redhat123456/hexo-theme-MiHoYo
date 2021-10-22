@@ -1,0 +1,104 @@
+/*中部信息框设计*/
+.logodiv {
+  text-align: center;
+}
+
+.titlex {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.list {
+  font-size: 17px;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.postname {
+  float: left;
+}
+
+.posttime {
+  float: right;
+}
+
+.logopng {
+  width: 150px;
+  border-radius: 70%;
+  overflow: hidden;
+}
+
+.breadcrumb {
+  padding: 8px 15px;
+  list-style: none;
+  background-color: initial;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.jing {
+  color: #1e90ff;
+}
+
+.logot {
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+.site-search-form {
+  padding-top: 30px;
+}
+.site-search-form #local-search-input {
+  border-radius: 10px;
+  height: 100%;
+  width: 100px;
+}
+#search-logo {
+  padding-right: 10px;
+}
+#local-search-close {
+  align: center;
+}
+
+.logot .logo_1 {
+  color: #888888;
+}
+
+.logot .logo_2 {
+  color: #37dd2c;
+}
+
+.logot .logo_3 {
+  color: #be8355;
+}
+.words {
+  padding-top: 16px;
+  font-size: 20px;
+}
+.navd {
+  padding-top: 14px;
+}
+
+.headt {
+  border-bottom: 1px solid #efefef;
+  height: 50px;
+}
+
+.fh {
+  top: 24px;
+  position: absolute;
+}
+
+hr {
+  border-color: #58606b;
+}
+
+/*文章列表*/
+.contain-box2 {
+  width: 60%;
+  margin: 0 auto;
+}

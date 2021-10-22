@@ -1,0 +1,39 @@
+.p1 {
+  color: #40b0ea;
+  text-shadow: 2px 2px 2px rgb(64 176 234 / 50%);
+  font-size: 21px;
+  line-height: 48px;
+  width: 100%;
+}
+.notice-list li {
+  height: 35px;
+  margin-top: 4px;
+  background-color: #f4f4f4;
+  list-style-type: none;
+}
+.notice-list p {
+  font-size: 16px;
+  line-height: 35px;
+  list-style: none;
+}
+.notice-time {
+  float: right;
+  margin-right: 15px;
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+  font-family: 'Microsoft Yahei';
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.notice-list a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+.notice-list a:hover {
+  color: #40b0ea;
+}
+.notice-time {
+  color: #a1a0a0;
+}
