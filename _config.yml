@@ -40,5 +40,5 @@ scripts:
 ## 若关闭valine 设置enable为false∂
 valine:
   enable: true
-  appId: 
-  appKey: 
+  appId: UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz
+  appKey: Qje6lzzuG0g2DPuVk0i1ix3s
