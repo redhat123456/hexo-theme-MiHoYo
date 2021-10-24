@@ -1,0 +1,332 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      ACM之递归 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      ACM之递归
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h2 id="百度百科—递归"><a href="#百度百科—递归" class="headerlink" title="百度百科—递归"></a>百度百科—递归</h2><p>程序调用自身的编程技巧称为递归（ recursion）。递归做为一种算法在程序设计语言中广泛应用。 一个过程或函数在其定义或说明中有直接或间接调用自身的一种方法，它通常把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题来求解，递归策略只需少量的程序就可描述出解题过程所需要的多次重复计算，大大地减少了程序的代码量。递归的能力在于用有限的语句来定义对象的无限集合。一般来说，递归需要有边界条件、递归前进段和递归返回段。当边界条件不满足时，递归前进；当边界条件满足时，递归返回。</p>
+<span id="more"></span>
+
+<h2 id="百度百科—递归-1"><a href="#百度百科—递归-1" class="headerlink" title="百度百科—递归"></a>百度百科—递归</h2><p>程序调用自身的编程技巧称为递归（ recursion）。递归做为一种算法在程序设计语言中广泛应用。 一个过程或函数在其定义或说明中有直接或间接调用自身的一种方法，它通常把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题来求解，递归策略只需少量的程序就可描述出解题过程所需要的多次重复计算，大大地减少了程序的代码量。递归的能力在于用有限的语句来定义对象的无限集合。一般来说，递归需要有边界条件、递归前进段和递归返回段。当边界条件不满足时，递归前进；当边界条件满足时，递归返回。</p>
+<h2 id="递归定义"><a href="#递归定义" class="headerlink" title="递归定义"></a>递归定义</h2><p>递归，就是在运行的过程中调用自己。<br>构成递归需具备的条件：<br>函数嵌套调用过程示例<br>函数嵌套调用过程示例</p>
+<ol>
+<li>子问题须与原始问题为同样的事，且更为简单；</li>
+<li>不能无限制地调用本身，须有个出口，化简为非递归状况处理。<br>在数学和计算机科学中，递归指由一种（或多种）简单的基本情况定义的一类对象或方法，并规定其他所有情况都能被还原为其基本情况。<br>例如，下列为某人祖先的递归定义：<br>某人的双亲是他的祖先（基本情况）。某人祖先的双亲同样是某人的祖先（递归步骤）。斐波纳契数列（Fibonacci Sequence），又称黄金分割数列，指的是这样一个数列：1、1、2、3、5、8、13、21….. I [1]<br>斐波纳契数列是典型的递归案例：<br>递归关系就是实体自己和自己建立关系。<br>Fib(0) = 1 [基本情况] Fib(1) = 1 [基本情况] 对所有n &gt; 1的整数：Fib(n) = (Fib(n-1) + Fib(n-2)) [递归定义] 尽管有许多数学函数均可以递归表示，但在实际应用中，递归定义的高开销往往会让人望而却步。例如：<br>阶乘（1) = 1 [基本情况] 对所有n &gt; 1的整数：阶乘（n) = (n * 阶乘（n-1)) [递归定义] 一种便于理解的心理模型，是认为递归定义对对象的定义是按照“先前定义的”同类对象来定义的。例如：你怎样才能移动100个箱子？答案：你首先移动一个箱子，并记下它移动到的位置，然后再去解决较小的问题：你怎样才能移动99个箱子？最终，你的问题将变为怎样移动一个箱子，而这时你已经知道该怎么做的。<br>如此的定义在数学中十分常见。例如，集合论对自然数的正式定义是：1是一个自然数，每个自然数都有一个后继，这一个后继也是自然数。<br>德罗斯特效应<br>德罗斯特效应<br>德罗斯特效应是递归的一种视觉形式。图中女性手持的物体中有一幅她本人手持同一物体的小图片，进而小图片中还有更小的一幅她手持同一物体的图片，依此类推。<br>又例如，我们在两面相对的镜子之间放一根正在燃烧的蜡烛，我们会从其中一面镜子里看到一根蜡烛，蜡烛后面又有一面镜子，镜子里面又有一根蜡烛……这也是递归的表现。</li>
+</ol>
+<h2 id="递归应用"><a href="#递归应用" class="headerlink" title="递归应用"></a>递归应用</h2><p>依我看递归最经典的应用恐怕是斐波纳契数列，一个数等于前面两个数相加<br>例：求第n个斐波拉基数；<br>一般的算法：</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main()&#123;
+    int p1=1,p2=1,n,j=0;
+    scanf(&quot;%d&quot;,&amp;n);
+    if(n&gt;=3)&#123;
+            printf(&quot;\n%d个斐波拉基数列：\n&quot;,n);
+    for(int i=0;i&lt;(n+1)/2;i++)&#123;
+    printf(&quot;%d &quot;,p1);
+    j++;
+    if(j!=n)
+    printf(&quot;%d &quot;,p2);
+    p1=p1+p2;
+    p2=p2+p1;
+    j++;
+    &#125;
+    &#125;
+    else&#123;
+        printf(&quot;输入的数字不够大&quot;);
+    &#125;
+</code></pre>
+<p>运用递归思想：</p>
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int f(int n);
+int main()&#123;
+    int n,sum;
+cout &lt;&lt;&quot;请输入一个数字&quot;&lt;&lt;&#39;\n&#39;;
+    cin&gt;&gt; n;                        //输入一个整数n
+sum=f(n);                         //函数调用
+    cout&lt;&lt;sum&lt;&lt;&#39;\n&#39;;
+return 0;
+&#125;
+int f(int n)
+&#123;
+    if(n&lt;=1)
+        return n;
+    else   
+    return f(n-1)+f(n-2);//递归调用
+&#125;
+</code></pre>
+<h3 id="栈和递归"><a href="#栈和递归" class="headerlink" title="栈和递归"></a>栈和递归</h3><pre><code>#include&lt;stdio.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int f(int m)&#123;
+    if(m==1) return 1;
+    else &#123;
+        cout&lt;&lt;m&lt;&lt;endl;
+        return f(m-1);
+    &#125;
+&#125; 
+int main()&#123;
+    int n;
+    int f(int m);
+    cout&lt;&lt;&quot;请输入一个大于1的数：&quot;&lt;&lt;endl;
+    cin&gt;&gt;n;
+    cout&lt;&lt;f(n)&lt;&lt;endl;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="经典题目："><a href="#经典题目：" class="headerlink" title="经典题目："></a>经典题目：</h3><h4 id="1-一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子"><a href="#1-一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子" class="headerlink" title="1.一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子"></a>1.一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子</h4><h5 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析:"></a>题目分析:</h5><p>递归终止的条件是当达到第7个村庄时递归停止，设经过的村庄数为n则有剩余的鸭子为总数为每次剩余的鸭子数位sum = sum-(sum/2+1)<br>算法构造：当 n=7 时 sum = 2;当 0&lt;n&lt;7 时 sum =2*m+2;</p>
+<h5 id="源代码："><a href="#源代码：" class="headerlink" title="源代码："></a>源代码：</h5><pre><code>#include &lt;iostream.h&gt;
+class Questionone&#123;
+public: 
+    int answer(int n, int sum)&#123;
+        if(n&gt;0)&#123;
+            sum = 2*sum+2;    
+            if(n-1&gt;0)&#123;    
+                cout&lt;&lt;&quot;第&quot;&lt;&lt;n-1&lt;&lt;&quot;个村庄&quot;&lt;&lt;&quot;卖出&quot;&lt;&lt;2*sum+2-sum&lt;&lt;endl;
+            &#125;
+            n--;
+            return answer(n,sum);
+        
+        &#125;else&#123;
+            return sum;
+        &#125;
+    &#125;        
+&#125;;
+void main()&#123;
+    int SUM = 2;
+    int  N =  7;
+    Questionone question;
+    cout&lt;&lt;&quot;总数：&quot;&lt;&lt;question.answer(N,SUM)&lt;&lt;endl;    
+&#125;
+</code></pre>
+<h4 id="2-角谷定理"><a href="#2-角谷定理" class="headerlink" title="2.角谷定理"></a>2.角谷定理</h4><p>输入一个自然数，若为偶数，则把它除以2，若为奇数，则把它乘以3加1。经过如此有限次运算后，总可以得到自然数值1。求经过多少次可得到自然数1。<br>算法分析：<br>递归的终止条件是最后值为1；设输入的值为n先进项判断，若 n = 1则输出n;<br>若n不为1；则对他进行偶数判断，若为偶数除2，若为奇数则乘3加1；然后在进行偶数判断，直到n = 1为止；<br>算法构造<br>n=1 时 输出n；n!=1时 偶数判断 偶数 n = n/2;若是奇数 n = 3*n+1</p>
+<h5 id="源代码：-1"><a href="#源代码：-1" class="headerlink" title="源代码："></a>源代码：</h5><pre><code>#include&lt;iostream.h&gt;
+class questiontwo&#123;
+    public:
+        int answer(int sum)&#123;
+            if(sum == 1)&#123;
+                cout&lt;&lt;&quot; &quot;&lt;&lt;sum;
+                return sum;
+            &#125;else&#123;
+                if((sum%2) == 1)&#123;
+                    sum = 3*sum+1;
+                    cout&lt;&lt;&quot; &quot;&lt;&lt;sum;
+                    return answer(sum);
+                &#125;else&#123;
+                    sum = sum/2;
+                    cout&lt;&lt;&quot; &quot;&lt;&lt;sum;
+                    return answer(sum);
+                &#125;
+            &#125;            
+        &#125;
+&#125;;
+void main()&#123;
+    int c ;
+    cout&lt;&lt;&quot;请输入一个数&quot;&lt;&lt;endl;
+    cin&gt;&gt;c;
+    questiontwo question2;
+    question2.answer(c);
+&#125;
+</code></pre>
+<h4 id="3-电话号码"><a href="#3-电话号码" class="headerlink" title="3.电话号码"></a>3.电话号码</h4><pre><code>电话号码对应的字符组合：在电话或者手机上，一个数字对应着字母ABC，7对
+应着PQRS。那么数字串27所对应的字符可能组合就有3*4种（如AP,BR等）。现
+在输入一个3到11位长的电话号码，请打印出这个电话号码对应的字符的所有可
+能组合和组合数。
+</code></pre>
+<h5 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h5><pre><code>根据题意可知：2对应的是ABC  3对应的是DEF 4对应的是GHI 5对应的JKL
+6对应的是MNO 7对应的是PQRS 8对应的是TUV 9对应的是WXYZ
+</code></pre>
+<h5 id="源代码：-2"><a href="#源代码：-2" class="headerlink" title="源代码："></a>源代码：</h5><pre><code>public class questionthree &#123;
+    /**
+    * 
+    * @param number      电话号码
+    * @param answer    辅助数组
+    * @param index  电话位数中对应的第几位循环
+    * @param n  电话位数
+    */
+    public static void Answer(int []number, int []answer,int 
+    index,int n)&#123;
+        char[][] word =&#123;&#123;&#125;,&#123;&#125;,&#123;'A','B','c'&#125;,&#123;'D','E','F'&#125;,&#123;'G',
+            'H','I'&#125;,&#123;'J','K','L'&#125;,&#123;'M','N','O'&#125;,&#123;'P','Q','R','s'&#125;,
+            &#123;'T','U','V'&#125;,&#123;'W','X','Y','Z'&#125;&#125;;
+        int []sum = &#123;0,0,3,3,3,3,3,4,3,4&#125;;
+        if(index == n)&#123;
+            for(int i = 0; i&lt;n; i++)&#123;
+                System.out.print(word[number[i]][answer[i]]);
+            &#125;
+            System.out.println(&quot;;&quot;);
+            return ;
+        &#125;
+        for(answer[index] = 0; answer[index] &lt; sum [number[index]]; answer[index]++)&#123;
+            Answer(number,answer,index+1,n);
+        &#125;
+    &#125;
+    public static void main(String[] args)&#123;
+        int[] number = &#123;2,3,4,5,6,7,8,9&#125;;
+        int[] answer = new int[number.length];
+        Answer(number, answer, 0, number.length);
+        
+    &#125;
+&#125;
+</code></pre>
+<h4 id="4-柿子分配："><a href="#4-柿子分配：" class="headerlink" title="4.柿子分配："></a>4.柿子分配：</h4><p>日本著名数学游戏专家中村义作教授提出这样一个问题：父亲将2520个桔子分给六个儿子。分完 后父亲说：“老大将分给你的桔子的1/8给老二；老二拿到后连同原先的桔子分1/7给老三；老三拿到后连同原先的桔子分1/6给老四；老四拿到后连同原先的桔子分1/5给老五；老五拿到后连同原先的桔子分1/4给老六；老六拿到后连同原先的桔子分1/3给老大”。结果大家手中的桔子正好一 样多。问六兄弟原来手中各有多少桔子？</p>
+<h5 id="题目分析：-1"><a href="#题目分析：-1" class="headerlink" title="题目分析："></a>题目分析：</h5><pre><code>解决此问题主要使用递归运算。由题目可以看出原来手中的加上得到的满足关系
+式：StartNum = 420 * (n -2)/(n - 1) 分给下一个人的橘子数：
+GiveNum = AfterGetNum / n;  下一个人的橘子数：nextStartNum = 420*
+(n-1)/(n-2) - GiveNum;  下一个人加上之前得到的橘子的总数：
+afterGetNum = nextStartNum + GiveNum;  以此使用递归算法可以算出各
+个孩子原来手中的橘子数。
+</code></pre>
+<h5 id="源代码：-3"><a href="#源代码：-3" class="headerlink" title="源代码："></a>源代码：</h5><pre><code>public class questionfour &#123;
+    /**
+    * 
+    * @param n  表示第几个儿子
+    * @param befor  表示为分配之前就的桔子数
+    * @param After    表示分配之后的桔子数
+    * @param m        分配的比例
+    * @return
+    */
+    public int answer(int n,int befornum, int afternum,int m )&#123;
+        if(n&gt;6)&#123;
+            return 0;
+        &#125;else&#123;
+            System.out.println(&quot;老&quot;+n+&quot;原有的桔子数&quot;+befornum);
+            //分给下一个人的桔子数
+            int givenum = afternum/m;
+            //下一个人的桔子数
+            int nextBeforenum = 420*(m-1)/(m-2)-givenum;
+            //下一人加上之前的桔子数的总数
+            int afterGetnum = nextBeforenum+givenum;
+            return answer(n+1,nextBeforenum,afterGetnum,m-1);
+        &#125;
+    &#125;
+    public static void main(String[] args)&#123;
+        questionfour question4 = new questionfour();
+        question4.answer(1, 240, 240, 8);
+    &#125;
+</code></pre>
+<p>来源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36102598/article/details/72055160">https://blog.csdn.net/qq_36102598/article/details/72055160</a></p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

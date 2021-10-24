@@ -1,0 +1,184 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      开发小程序日志(一) [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      开发小程序日志(一)
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="微信小程序介绍"><a href="#微信小程序介绍" class="headerlink" title="微信小程序介绍"></a>微信小程序介绍</h3><p> &nbsp; &nbsp;小程序小程序当然就是小程序，现在的生活很多软件就TM用一次两次就用不上烂在手机里占用手机的内存，据统计一个人的手机里70%的软件是很少用的，只有30%的软件是经常使用的，所以就有人开发出微信小程序</p>
+<h3 id="小程序的目录"><a href="#小程序的目录" class="headerlink" title="小程序的目录"></a>小程序的目录</h3><p> 一般来说，一个页面一个文件夹四个文件</p>
+<p> <img src="https://github.com/redhat123456/pohots/raw/master/wei.jpg"></p>
+<p> 这四个文件缺一不可，到后面我们可以通过超链接实现各个页面的转换</p>
+<p>wxss和css是一个意思，只不过是微信小程序的一个变动</p>
+<h2 id="基础布局容器"><a href="#基础布局容器" class="headerlink" title="基础布局容器"></a>基础布局容器</h2><p>&nbsp;</p>
+<p>小程序的许多使用方法还是和vue前端语法一样的</p>
+<h3 id="view"><a href="#view" class="headerlink" title="view"></a>view</h3><h4 id="hover"><a href="#hover" class="headerlink" title="hover"></a>hover</h4><p>这个代码的用途是像按钮一样，按下去可以改变你想改变的</p>
+<pre><code>\&lt;view class=&quot;box&quot; hover-class=&quot;boxHover&quot;\&gt;
+
+wdnmd
+
+&lt;view class=&quot;item&quot; hover-class=&quot;boxHover&quot;&gt;&lt;/view&gt;
+
+wdnmd
+
+&lt;/view&gt;
+</code></pre>
+<p>把这串代码放在.wxml文件中，然后在.wxss也进行修改对“item”和“box”这两种块进行一个定义</p>
+<pre><code>.box&#123; width: 100px; height: 100px;background-color: blue;&#125;
+.box:hover&#123; background-color: cornsilk;&#125;
+.item&#123; width: 30px; height: 50px;background-color: rgb(209, 209, 209);&#125;
+.item:hover&#123; background-color: green;&#125;
+</code></pre>
+<p>然后他的效果就是单击修改背景颜色</p>
+<h4 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h4><p>当其后面的字符为row时指的是横向布局<br>当其后面的字符为column时指的是纵向布局<br>如图:</p>
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>flex-direction: row\n横向布局</text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1"></view>
+          <view class="flex-item demo-text-2"></view>
+          <view class="flex-item demo-text-3"></view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>flex-direction: column\n纵向布局</text>
+      </view>
+      <view class="flex-wrp" style="flex-direction:column;">
+        <view class="flex-item flex-item-V demo-text-1"></view>
+        <view class="flex-item flex-item-V demo-text-2"></view>
+        <view class="flex-item flex-item-V demo-text-3"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<h3 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h3><p>&nbsp;&nbsp;这个视图容器就好比幻灯片，interval用来控制两个幻灯片交换的时长单位为毫秒(ms),previous-margin用来设置前边距</p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

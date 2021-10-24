@@ -1,0 +1,313 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      ACM之7-22日作业题解 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      ACM之7-22日作业题解
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="1-A讲故事"><a href="#1-A讲故事" class="headerlink" title="1.A讲故事"></a>1.A讲故事</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>   一天，天上掉下来了一个可爱的小妹妹，小妹妹天天缠着你给她讲故事。并且让你在N天内给她讲K(K ≤ N)个不同小故事。你把你知道的所有K个故事从1到K进行编号。她每天会要求你讲某一个小故事，例如第i天她会要求你给他讲第ai个小故事。<br>        由于小妹妹有间歇性失忆，所以她可能会在一些天内要求你讲你已经讲过的故事。如果你每天都按照她的要求来的话，可能会出现无法在N天内讲完K个故事的情况(小妹妹可能没有要<br>        求过讲某个故事)<br>    <span id="more"></span></p>
+<h3 id="1-A讲故事-1"><a href="#1-A讲故事-1" class="headerlink" title="1.A讲故事"></a>1.A讲故事</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>   一天，天上掉下来了一个可爱的小妹妹，小妹妹天天缠着你给她讲故事。并且让你在N天内给她讲K(K ≤ N)个不同小故事。你把你知道的所有K个故事从1到K进行编号。她每天会要求你讲某一个小故事，例如第i天她会要求你给他讲第ai个小故事。<br>        由于小妹妹有间歇性失忆，所以她可能会在一些天内要求你讲你已经讲过的故事。如果你每天都按照她的要求来的话，可能会出现无法在N天内讲完K个故事的情况(小妹妹可能没有要<br>        求过讲某个故事)</p>
+<p>你为了完成任务可能在某些情况下，不得不拒绝她的要求，给她讲其他的小故事。但是你在第i天拒绝了小妹妹的请求的话，小妹妹对你的好感度就会下降b</p>
+<p>如何在降低最小好感度的情况下在N天内讲完K给小故事。请输出最少降低的好感度。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>第一行两个正整数，N K (1≤ K ≤N ≤ 10^5) N为总天数，K为需要讲述的故事个数</p>
+<p>第二行N个正整数 a1 a2 …… an (1 ≤ ai ≤ k) 第n天要求的故事序号</p>
+<p>第三行N个正整数 b1 b2 …… bn(1 ≤ bi ≤ 10^9) 第i天拒绝要求降低的好感度</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>一行，<strong>满足条件</strong>的前提下最少降低的好感度。</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>8 7
+1 1 3 1 5 3 7 1
+5 7 4 8 1 3 5 2
+</code></pre>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>10 
+</code></pre>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>对样例一，最佳的方案是在 1, 6, 8 天把故事改为 2, 4, 6 号，降低的好感度为 a1 + a6 + a8 = 5 + 3 + 2 = 10</p>
+<p>对样例二，不需要做调整</p>
+<h4 id="参考程序-c"><a href="#参考程序-c" class="headerlink" title="参考程序 c++"></a>参考程序 c++</h4><pre><code>#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+#define ll long long
+struct data_p&#123;int a;ll b;&#125;num[100005];
+int n,k,maxl[100005],now=0;
+ll ans;
+bool cmp(data_p x,data_p y)&#123;return x.b&lt;y.b;&#125;
+int main()
+&#123;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;k);
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        scanf(&quot;%d&quot;,&amp;num[i].a);
+    &#125;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        scanf(&quot;%d&quot;,&amp;num[i].b);
+        
+        if(num[ maxl[ num[i].a ] ].b&lt;num[i].b)
+        maxl[num[i].a]=i;
+    &#125;
+    
+    for(int i=1;i&lt;=k;i++)
+    &#123;
+        if(!maxl[i])continue;
+        num[maxl[i]].b=1000000000;
+        now++;
+    &#125;
+    
+    sort(num+1,num+n+1,cmp);
+    
+    for(int i=1;i&lt;=k-now;i++)
+    &#123;
+        ans+=num[i].b;
+    &#125;
+    printf(&quot;%lld&quot;,ans);
+    return 0;
+&#125; 
+</code></pre>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>贪心问题求最优解，先排序让降低好感度最小的排在前面，先对重复且降低好感度最小的故事提出来，然后再根据要调整的天数来依此相加。</p>
+<h3 id="B-数学题"><a href="#B-数学题" class="headerlink" title="B: 数学题"></a>B: 数学题</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>   今天，你向你的心上人表白了，可是TA说：</p>
+<p>我这里有一个长度为n(2 ≤ n ≤ 30)的数列，数列的第i项是2i。现在保证数列长度n是一个偶数，将数列平均分成两份，如果你能得出两份的最小差值，我就答应你。</p>
+<p>  看着自己的心上人，你光速的写了一个程序，算出了最小差值。</p>
+<h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><p>第一行 T (T≤100) 表示 (<del>你心上人的个数</del>) 有T组数据</p>
+<p>接下来的T行每一行有一个 数组长度n (2 ≤ n ≤ 30)且保证n是偶数</p>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><p>对于每一个测试数据都输出最小差值</p>
+<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>2
+2
+4
+</code></pre>
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+6
+</code></pre>
+<h4 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h4><p>用笔算</p>
+<h4 id="参考程序-c-（个人写的）"><a href="#参考程序-c-（个人写的）" class="headerlink" title="参考程序 c++（个人写的）"></a>参考程序 c++（个人写的）</h4><pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+#include&lt;math.h&gt;
+using namespace std;
+long long sum1,sum2;
+int main()&#123;
+    int t,n,i,step;
+    cin&gt;&gt;t;
+    while(t--)&#123;
+        cin&gt;&gt;n;
+        if(n%2!=0)
+        continue;
+        else&#123;
+        sum1=0,sum2=0,step=1;
+        for(i=1;i&lt;=n-1;i++)&#123;
+            step=step*2;
+            sum1=sum1+step;
+            &#125;
+            step=1;
+        for(i=1;i&lt;=(n/2)-1;i++)&#123;
+            step=step*2;
+            sum2=sum2+step;
+        &#125;
+        cout&lt;&lt;pow(2,n)+2*sum2-sum1&lt;&lt;endl;&#125;
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><p><img src="https://img.alicdn.com/imgextra/i4/0/O1CN01ZzlH9b1kCpWyEAy3S_!!0-rate.jpg_400x400.jpg"></p>
+<h3 id="3-C：数的划分"><a href="#3-C：数的划分" class="headerlink" title="3.C：数的划分"></a>3.C：数的划分</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>将整数n分成k份，且每份不能为0，问有多少种不同的分法。注：当n=7，k=3时，下面三种分法被视为是相同的</p>
+<pre><code>1 1 5
+1 5 1
+5 1 1
+</code></pre>
+<h4 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h4><p>一行两个整数n，k</p>
+<h4 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h4><p>一行一个整数，即不同的分法数</p>
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>7 3
+</code></pre>
+<h4 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>4
+</code></pre>
+<h4 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a>提示</h4><p>对于样例的四种分法：</p>
+<pre><code>1 1 5
+1 2 4
+1 3 3
+2 2 3
+</code></pre>
+<p>0&lt;=n&lt;=200，2&lt;=k&lt;=6</p>
+<h4 id="参考程序"><a href="#参考程序" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include&lt;iostream&gt;//(深搜)
+using namespace std;
+int n,k,ans=0;
+void dfs(int past,int cnt,int num)
+&#123;
+    if(cnt==1)
+    &#123;
+        ans++;
+        return;
+    &#125;
+    for(int i=past;i&lt;=num/cnt;i++)
+    dfs(i,cnt-1,num-i);
+&#125;
+int main()
+&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    dfs(1,k,n);
+    cout&lt;&lt;ans;
+    return 0;
+&#125;
+</code></pre>
+<h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><p>也就是递归+搜索，其中past代表当前分出来的数，cnt代表是剩下还可以分几次，num代表分完past之后<br>剩下的数。其实思想是很简单的，只要能理解，用笔写一写就可以知道了，反正懂得都懂。</p>
+<h3 id="4-D：扩散"><a href="#4-D：扩散" class="headerlink" title="4.D：扩散"></a>4.D：扩散</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>一个点每过一个单位时间就会向四个方向扩散一个距离，如图。</p>
+<p><img src="https://img.alicdn.com/imgextra/i2/0/O1CN016YZY6n1kCpWtycyUL_!!0-rate.jpg_400x400.jpg"></p>
+<p>两个点a、b连通，记作e(a,b),当且仅当a、b的扩散区域有公共部分。连通块的定义是块内的任意两个点u、v都必定存在路径e(u,a0),e(a0,a1),…,e(ak,v)。给定平面上的n给点，问最早什么时刻它们形成一个连通块。</p>
+<h4 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h4><p>第一行一个数n，以下n行，每行一个点坐标X[i]  Y[i]。</p>
+<h4 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h4><p>一个数，表示最早的时刻所有点形成连通块。</p>
+<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>2
+0 0
+5 5
+</code></pre>
+<h4 id="样例输出-4"><a href="#样例输出-4" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>5
+</code></pre>
+<h4 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a>提示</h4><p>1≤N≤50; 1≤X[i],Y[i]≤10^9</p>
+<h4 id="参考程序-1"><a href="#参考程序-1" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=100;
+int n,dis[N][N],anss;
+struct node&#123;
+    int x,y;
+&#125;a[N];
+int main()
+&#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i=1;i&lt;=n;i++) 
+    scanf(&quot;%d%d&quot;,&amp;a[i].x,&amp;a[i].y);
+    for (int i=1;i&lt;=n;i++)
+    for (int j=1;j&lt;=n;j++)
+        dis[i][j]=abs(a[i].x-a[j].x)+abs(a[i].y-a[j].y); 
+    for (int k=1;k&lt;=n;k++) 
+    for (int i=1;i&lt;=n;i++)
+        for (int j=1;j&lt;=n;j++)
+        dis[i][j]=min(dis[i][j],max(dis[i][k],dis[k][j]));
+    for (int i=1;i&lt;=n;i++)
+    for (int j=1;j&lt;=n;j++)
+        anss=max(anss,dis[i][j]);
+    printf(&quot;%d\n&quot;,(anss+1)/2);
+    return 0; 
+&#125;
+</code></pre>
+<h4 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h4><p>先来科普一下曼哈顿距离：**d(i,j)=|xi-xj|+|yi-yj|**，也就是直线距离<br><img src="https://bkimg.cdn.bcebos.com/pic/8326cffc1e178a8208d61b83f603738da977e82f?x-bce-process=image/resize,m_lfit,w_220,h_220,limit_1"><br>我们假设有两个点A，B，他们的坐标分别为(X1,Y1),(X2,Y2).那么现在我们要这两个点扩散，要多长时间？<br>假设X1&lt; X2,且Y1&lt; Y2，那么它们想要尽量靠拢就要向对方的方向扩散。那么A点每扩散一次，他们之间的距离-1，<br>同理B点每扩散一次，距离-1。</p>
+<p><strong>说明</strong>：<br>每次扩散A、B的曼哈顿距离-2.<br>1.如果曼哈顿距离（设其为dis）为奇数，那最后一次距离只差1。所以需要dis/2+1的时间，也就是（dis+1）/2;</p>
+<p>2,如果曼哈顿距离为偶数，那正好dis/2的时间后他们会正好相遇。而（dis+1）/2后对结果没有影响（因为是下取整）</p>
+<p>假设有三个点ABC，其中A离原点最近，C离原点最远，假设AB我们用了t1秒，BC我们用了t2秒，不考虑B，AC用了t3秒<br>，那么就会有min(t1，t2)&lt; t3,所以我们只需枚举每两个节点，用ans更新最大值即可，找到最大值就是答案了。(最远的两个点都扩散完了，<br>其他点肯定早他妈扩散完了)</p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

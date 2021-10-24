@@ -1,0 +1,258 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      ACM之7-25日中期比赛 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      ACM之7-25日中期比赛
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="1-A-奇数和数组"><a href="#1-A-奇数和数组" class="headerlink" title="1.A:奇数和数组"></a>1.A:奇数和数组</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给你一个由n个整数组成的数组a。<br>在一次移动中，您可以选择两个下标 1≤i，j≤n，i≠j并且设置ai:=aj。您可以执行这样的移动任意次数(可能是零次)。您可以在不同的操作中选择不同的下标。<br>操作:=是赋值的操作(即选择 i 和 j 并用 aj 替换 a i)。<br>你的任务是判断是否有可能得到一个元素之和为奇数(不能被2整除)的数组。</p>
+<span id="more"></span>
+<h3 id="1-A-奇数和数组-1"><a href="#1-A-奇数和数组-1" class="headerlink" title="1.A:奇数和数组"></a>1.A:奇数和数组</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给你一个由n个整数组成的数组a。<br>在一次移动中，您可以选择两个下标 1≤i，j≤n，i≠j并且设置ai:=aj。您可以执行这样的移动任意次数(可能是零次)。您可以在不同的操作中选择不同的下标。<br>操作:=是赋值的操作(即选择 i 和 j 并用 aj 替换 a i)。<br>你的任务是判断是否有可能得到一个元素之和为奇数(不能被2整除)的数组。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>输入的第一行包含一个整数t(1≤t≤2000)——测试用例的数量。</p>
+<p>接下来的2t行描述了测试用例。</p>
+<p>测试用例的第一行包含一个整数n(1≤n≤2000)——a中的元素数。</p>
+<p>测试用例的第二行包含n个整数a1，a2，…，an (1≤ai≤2000)，其中ai是a的第I个元素 保证所有测试用例的n之和不超过2000 (∑n≤2000)。</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>对于每个测试用例，如果能得到一个奇数元素和的数组，输出“YES”(不加引号)，否则为“NO”。</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>5
+2
+2 3
+4
+2 2 8 8
+3
+3 3 3
+4
+5 5 5 5
+4
+1 1 1 1
+</code></pre>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>YES
+NO
+YES
+NO
+NO
+</code></pre>
+<h4 id="参考程序"><a href="#参考程序" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="2-B-暗箱操作"><a href="#2-B-暗箱操作" class="headerlink" title="2.B:暗箱操作"></a>2.B:暗箱操作</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>有两个英语菜鸡lzh和xzy，每个人所能解决的问题都不一样，每个学期的英语考试到了，对于每一个英语题目都有一个相应的分数且每道题的相应分数p_i不能小于1，所有题目的分数总和最低的人就获得挂科重修再来一次，作为lzh好朋友的你，为了让lzh的英语考试分数比xzy高，你需要偷偷操控每题的分数p_i,但是如果p_i太大，lzh就会因为作弊被抓住，所以你要做的就是最小化所有英语题目中的最大分数p_i。</p>
+<h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><p>第一行包含一个整数n（1&lt;=n&lt;=100）代表英语题目的数量</p>
+<p>第二行有n个整数r1,r2 …,rn (0&lt;=ri&lt;=1).ri=1意味着lzh会i-题目,ri=0意味着它不会i- 题目</p>
+<p>第三行有n个整数b1,b2, …,bn (0&lt;=bi&lt;=1).bi=1意味着xzy会i-题目,bi=0意味着它不会i- 题目</p>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><p>如果你不能通过任何手段让lzh的分数大于xzy就输出-1<br>否则输出你在所有项目中修改分数的最大值</p>
+<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>5
+1 1 1 0 0
+0 1 1 1 1
+</code></pre>
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>3
+</code></pre>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>对于样例来说，你只需要把第一道题的分数改为3，第二道题的分数改为1，第三道题的分数改为3，第四道题的分数改为1，第五题的分数改为1<br>那么lzh的得分就是3+1+3=7，而xzy的得分是1+3+1+1=6，lzh的分数就比xzy的高了</p>
+<h4 id="参考程序-1"><a href="#参考程序-1" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="3-C-简简单单A-B"><a href="#3-C-简简单单A-B" class="headerlink" title="3.C:简简单单A+B"></a>3.C:简简单单A+B</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>给出三个整数 A,B,N；  1&lt;A,B,N&lt;1e9</p>
+<p>我们可以进行如下操作</p>
+<p>操作 1：让A=A+B；</p>
+<p>操作 2：让B=A+B；</p>
+<p>问最少需要多少次操作  可以使max（A，B）严格大于N      max（a,b)为（A,B中较大的那个）  </p>
+<h4 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h4><p>第一行一个整数T 代表测试组数   </p>
+<p>下面T行   1&lt;T&lt;100</p>
+<p>每行三个整数 A,B,N 意义如题所示   1&lt;A,B,N&lt;1e9</p>
+<h4 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h4><p>输出T行</p>
+<p>每行一个整数 代表所需要的最少操作</p>
+<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>2
+1 2 3
+5 4 100
+</code></pre>
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+7
+</code></pre>
+<h4 id="参考程序-2"><a href="#参考程序-2" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="4-D-淘淘的暗号"><a href="#4-D-淘淘的暗号" class="headerlink" title="4.D:淘淘的暗号"></a>4.D:淘淘的暗号</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>淘淘的暗号为一串由n个小写字母组成的字符串b,原文a生成b的方法为a中从左到右将每个长度为2的子串加入到b中，例如a串为’abcd’，那么子串从左到右的顺序为’ab’,’bc’,’cd’，则b为’abbccd’</p>
+<h4 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h4><p>输入长为n(3&lt;=n&lt;=100000)的暗号b</p>
+<h4 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h4><p>输出原文a</p>
+<h4 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>abbaac
+</code></pre>
+<h4 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>abac
+</code></pre>
+<h4 id="参考程序-3"><a href="#参考程序-3" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include&lt;string.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int main()&#123;
+    int n;
+    char s[100001];
+    gets(s);
+    n=strlen(s);
+    int i=0;
+    while(i&lt;=n-1)&#123;
+        cout&lt;&lt;s[i]; 
+        i+=2;
+    &#125;
+    cout&lt;&lt;s[n-1];
+    return 0;
+&#125; 
+</code></pre>
+<h3 id="5-E-淘淘的序列"><a href="#5-E-淘淘的序列" class="headerlink" title="5.E:淘淘的序列"></a>5.E:淘淘的序列</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p>对于一个长为n的数字序列中的每个数字ai，若当i为奇数时ai也为奇数，则称它为淘淘序列。同时，淘淘每次可以将序列中两个任意数字交换位置，求出淘淘需要多少次交换能将一个序列变为淘淘序列</p>
+<p>注意 ：i从0开始</p>
+<h4 id="输入-4"><a href="#输入-4" class="headerlink" title="输入"></a>输入</h4><p>第一行输入一个整数n(1&lt;=n&lt;=100000)，第二行输入n个整数ai(0&lt;=i&lt;=n-1)    </p>
+<h4 id="输出-4"><a href="#输出-4" class="headerlink" title="输出"></a>输出</h4><p>输出一个整数，代表淘淘最小需要做多少次交换操作能将给定序列变为淘淘序列，若不能变成淘淘序列输出-1</p>
+<h4 id="样例输入-4"><a href="#样例输入-4" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>4
+3 2 7 6
+</code></pre>
+<h4 id="样例输出-4"><a href="#样例输出-4" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+</code></pre>
+<h4 id="参考程序-4"><a href="#参考程序-4" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="6-F-打牌"><a href="#6-F-打牌" class="headerlink" title="6.F:打牌"></a>6.F:打牌</h3><h4 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h4><p>sys和llf在打牌，他们觉得现有的玩法太简单，所以他们玩起了摸牌游戏<br>规则如下</p>
+<p>有N张牌<br>两个人轮流摸牌 每次摸牌的数量只能是2的幂次  比如 1，2，4，8，16 ……<br>当轮到某人摸牌，此人若无牌可摸，败<br>llf先手摸牌<br>他们两人都会采取最优策略去摸牌</p>
+<h4 id="输入-5"><a href="#输入-5" class="headerlink" title="输入"></a>输入</h4><p>第一行一个数T 代表测试组数</p>
+<p>下面N行每行一个数N  意义如题所示</p>
+<h4 id="输出-5"><a href="#输出-5" class="headerlink" title="输出"></a>输出</h4><p>输出T行</p>
+<p>若先手赢 输出llfnb</p>
+<p>否则输出sysnb</p>
+<h4 id="样例输入-5"><a href="#样例输入-5" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>4
+1
+3
+4
+12
+</code></pre>
+<h4 id="样例输出-5"><a href="#样例输出-5" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>llfnb
+sysnb
+llfnb
+sysnb
+</code></pre>
+<h4 id="参考程序-我自己打的"><a href="#参考程序-我自己打的" class="headerlink" title="参考程序(我自己打的)"></a>参考程序(我自己打的)</h4><pre><code>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+int main()&#123;
+    int t,i,ans=1;
+    long long l;
+    cin&gt;&gt;t;
+    while(t--)&#123;
+        ans=1;
+        cin&gt;&gt;l;
+            if(l%3==0)
+                ans=0;
+            if(ans==0)
+            cout&lt;&lt;&quot;sysnb&quot;&lt;&lt;endl;
+            else
+            cout&lt;&lt;&quot;llfnb&quot;&lt;&lt;endl;
+        &#125;
+            return 0;
+    &#125;
+</code></pre>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>根据案例不难清楚当牌的数量为3的倍数时，都是先手输，所以可知，该问题被简化成倍数问题，在比赛中这样的规律可能不易发觉，要认真审题</p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

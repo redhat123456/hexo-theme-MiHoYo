@@ -1,0 +1,290 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      ACM之7-23日作业题解 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      ACM之7-23日作业题解
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="1-A-找良好数组"><a href="#1-A-找良好数组" class="headerlink" title="1.A.找良好数组"></a>1.A.找良好数组</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p> 给你一个数组a,注意下标从0开始<br>        如果数组中的每个奇数下标为奇数且数组中的每个偶数的下标为偶数则叫好数组否则就是不好数组<br>        比如[2,3,4,5]和[0,17,0,3]就是好数组，[2,4,6,7]就不是好数组<br>        但是你可以通过交换元素来使不好数组变成好数组<br>        一次交换可以使数组中两个任意元素进行交换（两个不相邻的元素也是可以的）<br>        如果能变成好数组请求出最小交换次数，否则就输出-1</p>
+<span id="more"></span>
+
+<h3 id="1-A-找良好数组-1"><a href="#1-A-找良好数组-1" class="headerlink" title="1.A.找良好数组"></a>1.A.找良好数组</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p> 给你一个数组a,注意下标从0开始<br>        如果数组中的每个奇数下标为奇数且数组中的每个偶数的下标为偶数则叫好数组否则就是不好数组<br>        比如[2,3,4,5]和[0,17,0,3]就是好数组，[2,4,6,7]就不是好数组<br>        但是你可以通过交换元素来使不好数组变成好数组<br>        一次交换可以使数组中两个任意元素进行交换（两个不相邻的元素也是可以的）<br>        如果能变成好数组请求出最小交换次数，否则就输出-1</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>   第一行包含一个整数 t(1&lt;=t&lt;=1000)-测试中的测试用例数。然后t 测试用例如下。<br>        每个测试用例均以包含整数的一行开头n （1 ≤n≤40）—数组a的长度 。<br>        下一行包含 n个整数a0,a1,…,an−1 (0≤ai≤1000) —初始数组</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p> 如果能变成好数组请输出一个整数就是最小交换次数，否则就输出-1</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>4
+4
+3 2 7 6
+3
+3 2 6
+1
+7
+7
+4 9 2 1 18 3 0
+</code></pre>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+1
+-1
+0
+</code></pre>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>在第一个测试用例中，在第一步中，您可以将元素的下标为 0和1的进行交换，然后在第二步中，可以将元素的下标为 2和 3的进行交换。</p>
+<p>在第二个测试用例中，在第一步中，您需要将元素的下标为 0 和1的进行交换。</p>
+<p>在第三个测试用例中，您不能使阵列良好</p>
+<h4 id="参考程序"><a href="#参考程序" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="2-B-B进制加法"><a href="#2-B-B进制加法" class="headerlink" title="2.B.B进制加法"></a>2.B.B进制加法</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>如题。2&lt;=B&lt;=36。</p>
+<h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><p>共3行第1行：一个十进制的整数,表示进制B。</p>
+<p>第2-3行：每行一个B进制数正整数。数字的每一位属于{0，1，2，3，4，5，6，7，8，9，A，B……}，每个数字长度&lt;=2000位。</p>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><p>一个B进制数，表示输入的两个数的和。</p>
+<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>4
+123
+321
+</code></pre>
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>1110
+</code></pre>
+<h4 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h4><p>进制计算器。</p>
+<h4 id="参考程序-1"><a href="#参考程序-1" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="3-C-高精度五则运算"><a href="#3-C-高精度五则运算" class="headerlink" title="3.C.高精度五则运算"></a>3.C.高精度五则运算</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>求A、B的和 差 积 商 余！（商是整除）</p>
+<h4 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h4><p>两个数两行<br>A B</p>
+<h4 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h4><p>五个数<br>和 差 积 商 余</p>
+<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>1
+1
+</code></pre>
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+0
+1
+1
+0
+</code></pre>
+<h4 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a>提示</h4><p>length(A),length(B)&lt;=10^4</p>
+<p>A,B&gt;0 </p>
+<h3 id="4-D-栈操作"><a href="#4-D-栈操作" class="headerlink" title="4.D.栈操作"></a>4.D.栈操作</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>有3种操作</p>
+<p>p x 表示 将数字X压入栈中</p>
+<p>t    表示，输出现在栈顶的数</p>
+<p>d   表示，让栈顶的元素出栈</p>
+<h4 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h4><p>第一行一个整数N 代表总操作个数  1&lt;n&lt;200<br>下面N行</p>
+<p>若第一个字符为p 则后面有一个数字x ，   将数字X压入栈中      1&lt;x&lt;1e9</p>
+<p>若第一个字符为t  输出现在栈顶的数(若栈中无元素，输出no）</p>
+<p>若第一个字符为d  让栈顶的元素出栈(若栈中无元素，则不操作）</p>
+<h4 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h4><p>若第一个字符为t  输出现在栈顶的数</p>
+<h4 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>5
+p 2
+p 1
+t
+d
+t
+</code></pre>
+<h4 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>1
+2
+</code></pre>
+<h4 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a>提示</h4><h4 id="参考程序-2"><a href="#参考程序-2" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="5-E-队列操作"><a href="#5-E-队列操作" class="headerlink" title="5.E.队列操作"></a>5.E.队列操作</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p>三种操作</p>
+<p>p x 代表x入队</p>
+<p>t 输出队首元素</p>
+<p>d 删除队首元素</p>
+<h4 id="输入-4"><a href="#输入-4" class="headerlink" title="输入"></a>输入</h4><p>一个整数N  代表操作数   1&lt;n&lt;200</p>
+<p>下面n行 每行进行一个操作</p>
+<p>p x 代表x入队</p>
+<p>t 输出队首元素（无元素输出no）</p>
+<p>d 删除队首元素 （无元素不进行操作）</p>
+<h4 id="输出-4"><a href="#输出-4" class="headerlink" title="输出"></a>输出</h4><p>t 输出队首元素（无元素输出no）</p>
+<h4 id="样例输入-4"><a href="#样例输入-4" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>7
+p 1
+p 2
+t
+d
+d
+d
+t
+</code></pre>
+<h4 id="样例输出-4"><a href="#样例输出-4" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>1
+no
+</code></pre>
+<h4 id="提示-4"><a href="#提示-4" class="headerlink" title="提示"></a>提示</h4><h4 id="参考程序-3"><a href="#参考程序-3" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="6-F-采药"><a href="#6-F-采药" class="headerlink" title="6.F.采药"></a>6.F.采药</h3><h4 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h4><p>LZH是个天资聪颖的孩子，他的梦想是成为世界上最伟大的医师。为此，他想拜附近最有威望的医师为师。医师为了判断他的资质，给他出了一个难题。医师把他带到一个到处都是草药的山洞里对他说：“孩子，这个山洞里有一些不同的草药，采每一株都需要一些时间，每一株也有它自身的价值。我会给你一段时间，在这段时间里，你可以采到一些草药。如果你是一个聪明的孩子，你应该可以让采到的草药的总价值最大。”</p>
+<p>如果你是LZH，你能完成这个任务吗？</p>
+<h4 id="输入-5"><a href="#输入-5" class="headerlink" title="输入"></a>输入</h4><p>第一行包含一个整数t，表示数据组数。</p>
+<p>对于每组数据，第1行包括2个整数，n,m，表示草药的数目和能用于采药的时间。</p>
+<p>接下来n行，每行两个整数Ti,Vi分别表示采摘该株草药的时间和这株草药的价值。</p>
+<h4 id="输出-5"><a href="#输出-5" class="headerlink" title="输出"></a>输出</h4><p>输出t行，每行一个数字，表示每组数据的答案。</p>
+<h4 id="样例输入-5"><a href="#样例输入-5" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>1
+3 70
+71 100
+69 1
+1 2
+</code></pre>
+<h4 id="样例输出-5"><a href="#样例输出-5" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>3
+</code></pre>
+<h4 id="提示-5"><a href="#提示-5" class="headerlink" title="提示"></a>提示</h4><p>1&lt;=t&lt;=10, 1&lt;=n&lt;=150, 1&lt;=m,Ti,Vi&lt;=10^5</p>
+<h4 id="参考程序-4"><a href="#参考程序-4" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="7-G-射击游戏"><a href="#7-G-射击游戏" class="headerlink" title="7.G.射击游戏"></a>7.G.射击游戏</h3><h4 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h4><p>sys在靶场进行射击训练，有1~n 共N个靶，依次顺序排在sys的前方<br>教官要求sys 每次要打掉其中连续一段的靶子 ，正规来说，教官给出 L，R ，要求sys 打倒 [L,R]区间的靶子<br>打倒第i个靶子需要ai发子弹<br>现在给出教官每次的训练要求，请你计算sys每次至少要装多少子弹。</p>
+<h4 id="输入-6"><a href="#输入-6" class="headerlink" title="输入"></a>输入</h4><p>一个整数N 代表靶子数量   1&lt;n&lt;1e5</p>
+<p>第二行N个整数  代表ai 意义如题所示   1&lt;ai&lt;1e5</p>
+<p>第三行一个整数M  教官给sys的训练次数     1&lt;m&lt;1e5</p>
+<p>接下来M行 </p>
+<p>每行两个数字 L，R 意义如题所示     1&lt;=L,R&lt;=n  且L&lt;=R</p>
+<h4 id="输出-6"><a href="#输出-6" class="headerlink" title="输出"></a>输出</h4><p>输出共M行 </p>
+<p>输出每次训练sys需要装的子弹数</p>
+<h4 id="样例输入-6"><a href="#样例输入-6" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>5
+1 2 3 4 5
+3
+1 2
+1 5
+3 5
+</code></pre>
+<h4 id="样例输出-6"><a href="#样例输出-6" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>3
+15
+12
+</code></pre>
+<h4 id="提示-6"><a href="#提示-6" class="headerlink" title="提示"></a>提示</h4><h4 id="参考程序-我自己写的"><a href="#参考程序-我自己写的" class="headerlink" title="参考程序(我自己写的)"></a>参考程序(我自己写的)</h4><h3 id="8-H-二分查找"><a href="#8-H-二分查找" class="headerlink" title="8.H.二分查找"></a>8.H.二分查找</h3><h4 id="题目描述-8"><a href="#题目描述-8" class="headerlink" title="题目描述"></a>题目描述</h4><p>现有长度为n(n≤10^6)的非降序列（既每一项不小于前一项，编号从1到n），每一项的大小1≤ai≤10^9。<br>        然后对其进行m（m≤10^5）次询问，每次询问给出一个整数q（q≤10^9），要求输出这个数字在序列中的第一次出现时的编号，如果不存在于数列中的话，则输出-1。</p>
+<h4 id="输入-7"><a href="#输入-7" class="headerlink" title="输入"></a>输入</h4><p>第一行2个正整数 n m 分别表示，数字个数和询问次数。</p>
+<p>第二行n给整数，表示这些带查询的数字。</p>
+<p>第三行m个整数，表示询问这些数字的编号，从1开始编号。</p>
+<h4 id="输出-7"><a href="#输出-7" class="headerlink" title="输出"></a>输出</h4><p>一行，m个整数用空格隔开。</p>
+<h4 id="样例输入-7"><a href="#样例输入-7" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>11 3
+1 3 3 3 5 7 9 11 13 15 15
+1 3 6
+</code></pre>
+<h4 id="样例输出-7"><a href="#样例输出-7" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>1 2 -1 
+</code></pre>
+<h4 id="提示-7"><a href="#提示-7" class="headerlink" title="提示"></a>提示</h4><p>当找到某一个 ai 等于q时，向右线性搜索找第一个等于q的序号时会超时。</p>
+<h4 id="参考程序-5"><a href="#参考程序-5" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="9-I-神奇的四次方数"><a href="#9-I-神奇的四次方数" class="headerlink" title="9.I.神奇的四次方数"></a>9.I.神奇的四次方数</h3><h4 id="题目描述-9"><a href="#题目描述-9" class="headerlink" title="题目描述"></a>题目描述</h4><p>将一个整数m分解为n个四次方数的和的形式，要求n最小。例如，m=706,706=5^4+3^4,则n=2。</p>
+<h4 id="输入-8"><a href="#输入-8" class="headerlink" title="输入"></a>输入</h4><p>一行，一个整数m。</p>
+<h4 id="输出-8"><a href="#输出-8" class="headerlink" title="输出"></a>输出</h4><p>一行，一个整数n。</p>
+<h4 id="样例输入-8"><a href="#样例输入-8" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>706
+</code></pre>
+<h4 id="样例输出-8"><a href="#样例输出-8" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+</code></pre>
+<h4 id="提示-8"><a href="#提示-8" class="headerlink" title="提示"></a>提示</h4><p>m&lt;=100,000</p>
+<h4 id="参考程序-6"><a href="#参考程序-6" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="10-J-栈"><a href="#10-J-栈" class="headerlink" title="10.J.栈"></a>10.J.栈</h3><h4 id="题目描述-10"><a href="#题目描述-10" class="headerlink" title="题目描述"></a>题目描述</h4><p>栈是计算机中经典的数据结构，简单的说，栈就是限制在一端进行插入删除操作的线性表。<br>栈有两种最重要的操作，即 pop（从栈顶弹出一个元素）和 push（将一个元素进栈）。<br>栈的重要性不言自明，任何一门数据结构的课程都会介绍栈。宁宁同学在复习栈的基本概念时，想到了一个书上没有讲过的问题，而他自己无法给出答案，所以需要你的帮忙。</p>
+<p><img src="https://img.alicdn.com/imgextra/i3/2/O1CN0167Emkf1kCpWv2lc7h_!!2-rate.png_400x400.jpg"><br><img src="https://img.alicdn.com/imgextra/i1/2/O1CN01GFh8YD1kCpWyWsaKV_!!2-rate.png_400x400.jpg"></p>
+<h4 id="输入-9"><a href="#输入-9" class="headerlink" title="输入"></a>输入</h4><p>输入只含一个整数 n、（1&lt;=n&lt;=18）</p>
+<h4 id="输出-9"><a href="#输出-9" class="headerlink" title="输出"></a>输出</h4><p>输出只有一行，即可能输出序列的总数目。</p>
+<h4 id="样例输入-9"><a href="#样例输入-9" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>3
+</code></pre>
+<h4 id="样例输出-9"><a href="#样例输出-9" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>5
+</code></pre>
+<h4 id="参考程序-7"><a href="#参考程序-7" class="headerlink" title="参考程序"></a>参考程序</h4><h3 id="11-K-FBI树"><a href="#11-K-FBI树" class="headerlink" title="11.K.FBI树"></a>11.K.FBI树</h3><h4 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://img.alicdn.com/imgextra/i2/2/O1CN01b6Q6qY1kCpWyWu83Q_!!2-rate.png_400x400.jpg"></p>
+<h4 id="输入-10"><a href="#输入-10" class="headerlink" title="输入"></a>输入</h4><p>第一行，一个整数n（1&lt;=n&lt;=10）<br>第二行，是一个长度为2^n的“01”串</p>
+<h4 id="输出-10"><a href="#输出-10" class="headerlink" title="输出"></a>输出</h4><p>一个字符串，即FBI树的后序遍历序列。</p>
+<h4 id="样例输入-10"><a href="#样例输入-10" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>3
+10001011
+</code></pre>
+<h4 id="样例输出-10"><a href="#样例输出-10" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>IBFBBBFIBFIIIFF
+</code></pre>
+<h4 id="提示-9"><a href="#提示-9" class="headerlink" title="提示"></a>提示</h4>
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

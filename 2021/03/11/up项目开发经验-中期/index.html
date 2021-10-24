@@ -1,0 +1,203 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      up项目开发经验总结(中期) [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      up项目开发经验总结(中期)
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言 "></a><font color="#4682B4">前言 </font></h3><h2 id="一些话"><a href="#一些话" class="headerlink" title="一些话"></a>一些话</h2><p>Hello~ 我是不干人事的Tanger，首先欢迎你阅读我的文章😀，也很期待各位大佬的指正，如果对这篇文章感兴趣的话，不妨收藏一下⭐本页面，如果有什么想对作者说的话可以通过两种方式联系作者：</p>
+<ul>
+<li><p>简单粗暴法：直接在下方的评论区留言🎈(这种方式可能作者回复较慢)</p>
+</li>
+<li><p>花里胡哨法：打开邮箱，发送你的留言至作者的邮箱(<a href="mailto:&#49;&#x39;&#48;&#55;&#x30;&#54;&#x35;&#x38;&#x31;&#48;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#49;&#x39;&#48;&#55;&#x30;&#54;&#x35;&#x38;&#x31;&#48;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a>)我会在第一时间回复你✨</p>
+</li>
+</ul>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;开始吹水&gt;&gt;&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是这样子的，我在2021年1月底的时候接到了一个学院派下来的任务(在此非常感谢学院给我的这次机会)，该任务是为了完成一个叫做“大学生创新创业”的比赛，上一个团队的任务是把这个项目的稿子写好写清楚写明白，然后好通过审核，下一年再组织开发完成项目，所以到我手上的时候，任务就变成了开发一款名为“up体能训练”的APP，一开始项目初稿(初稿不是我写的😂😂😂)是打算做APP的，然后习总🤔思来想去认为开发一个APP的难度确实有些大，而且如果让外包公司来做这件事的话实在很难为情，而且外包公司听说并非他们口中的那么好，开发的时候确实不要多少费用(因为他们都有模板，所以花不了多少成本)，但到了后期营运和维护就会特别的麻烦，你要定期交钱他们才肯给你做，总之就是个坑，当时的习学长在基地的学习成果展示的时候一眼看中了我会开发小程序这一作用(当时基地定期的学习成果展示，我展示了我在暑假花了一个月做的小程序)现在想想那个小程序真的是烂😭，事情就巧在这里，他需要一个人来帮助他完成项目的结尾工作，我恰好也需要一个项目来证明自己，所以咱们俩算是<strong>有缘</strong>😄😄😄啊，就这样，我和习学长在讨论了一个晚上之后确定我们的未来项目工作大致方向：</p>
+<p>◆「前端部分」用微信小程序为前端的平台开发好这款APP(所以也确定了我为前端手)</p>
+<p>◆「后端部分」再寻找一名出色的后端手(协助我完成该平台的搭建)</p>
+<p>◆「资源部分」寻找一些资源(例如：健身视频、和内容相关的图片)放在该平台上</p>
+<p>◆「平台应有的功能部分」至于功能就按照之前的项目书、申报书和之前答辩的PPT来确定该项目的功能</p>
+<h2 id="后端手"><a href="#后端手" class="headerlink" title="后端手 "></a><font color="#4682B4">后端手 </font></h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在接下来的日子里，由于习学长还要处理另外两个项目，以及习学长主要精力放在和老师一起进行的算法研究(关于图片处理的一些算法问题)，所以这次他打算找一名后端手协助我完成接下来的任务，后来他找到了我们基地的“<a target="_blank" rel="noopener" href="https://yww52.com/">yww</a>”，他是我们基地算法部的部长(也是我的部长😂😂😂)，他我并不陌生以我对他的印象他就是个宅男，整天玩公主连结😂😂😂，没想到这次的项目经历让我对他的印象发生了180°的转弯，也正是这次经历让我真真正正的了解了他，他确实是宅，他自己也承认，但是他是一个技术宅，他的后端接口响应还算快，也比较稳定，后端代码也写得不错，然后我们的开发团队正式成立，虽然只有两个人，但也算一个独立的开发项目，在寒假的时候我一开始先做前端的登录界面，我一开始的打算是做一个简单的登录界面，我的想法是给后端传输用户填写的账号和密码，后端只要去<strong>比对</strong>然后返回一个参数给我就行了，如图：<br><img src="https://7.dusays.com/2021/03/11/4b8efdd75448d.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后来他看过之后认为这个界面是来搞笑的😅，在实际操作过程中，用户可以直接跳过这步，也就是说用户在这个界面<strong>想登录就登录，不想登录就不登陆</strong>，而且因为没有完善好，没做好<strong>鉴权</strong>的代码，所以我打算做另外一种登录方式登录获取查看用户openid的权限，然后传参给后端进行绑定(加入信息到数据库)，然后我在我一天不断地搜索😁以及深入理解之后写出来了这个(也就是大部分微信小程序正在使用的登录方式，在后端对用户提供的openid进行“<strong>绑定</strong>”)，如图：<br><img src="https://7.dusays.com/2021/03/11/7398f79646043.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个按钮看上去平平无奇，实际上在它的js页面就决定了它和一般地按钮有十分巨大的区别，也正是这次的按钮风波让我真正感觉到js逻辑层的强大魅力，<strong>没有js，前端再好看也是空</strong> ，我是如何写js呢？</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先让我们跳到微信小程序的开发者文档的关于<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html">登录方面的介绍</a></p>
+<p>  &gt; &gt; &gt;下面稍微介绍一下</p>
+<p> <img src="https://7.dusays.com/2021/03/11/59fd7f44267ee.png"></p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这就是开发者文档当中的登录流程图，我们可以看到一个完整的流程，虽然看起来复杂，其实我们前端开发者只需要关注那些我们该关注的地方就可了，例如：wx.request() 发送code 以及登录凭证校验接口 那几段话 。</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后我们再结合微信官方的原话：</p>
+<pre><code>    说明：
+    1.调用 wx.login() 获取 临时登录凭证code ，并回传到开发者服务器。
+    2.调用 auth.code2Session 接口，换取 用户唯一标识 OpenID 、 用户在微信开放平台帐号下的唯一标识UnionID（若当前小程序已绑定到微信开放平台帐号） 和 会话密钥 session_key。
+</code></pre>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很显然微信小程序官方想让我们通过wx.login()获取到<strong>登录凭证</strong>(这个东西就好比验证码)，然后我们发送code、appid以及appsecret过去，我们就能拿到用户的openid了，就这么一段话</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后我来展示一下</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;代码如下&gt;&gt;&gt;</p>
+<pre><code>handleGetUserInfo(e)&#123;
+
+wx.login(&#123;  //这里通过wx.login这个方法获取code
+    success(res)&#123;//这里是成功之后返回回来的code，先用res来定义所有返回回来的数据
+        //console.log(&quot;res.code :&quot; +res.code)
+        wx.request(&#123;
+        url: &#39;https://api.weixin.qq.com/sns/jscode2session&#39;,
+        data: &#123;
+            appid: &#39;XXXXXXXXXXXXXXXXX(填你的APPID)&#39;,
+            secret: &#39;XXXXXXXXXXXXXXXXX(填你的secret)&#39;,
+            js_code: res.code,//这个固定
+            grant_type: &#39;authorization_code&#39;//这个也固定
+        &#125;,
+        method:&#39;GET&#39;,
+        success:function(res)&#123;
+            // 获取用户的openid
+            //console.log(res.data);
+            var openId = res.data.openid;
+            //openid: res.data.openid
+                    //请求成功之后，把openid放到储存里面
+                    wx.setStorage(&#123;
+                    key: &#39;openid&#39;, data: openId&#125;)
+            console.log(openId);
+
+            //这里可以根据需要来填写你想要的逻辑层(和后端手好好商量)
+            
+        &#125;
+        &#125;)
+    &#125;
+    &#125;)
+    
+&#125;
+</code></pre>
+<h2 id="在开发过程中的一些实际问题"><a href="#在开发过程中的一些实际问题" class="headerlink" title="在开发过程中的一些实际问题 "></a><font color="#4682B4">在开发过程中的一些实际问题 </font></h2><h3 id="前后端矛盾"><a href="#前后端矛盾" class="headerlink" title="前后端矛盾"></a><font color="#4682B4">前后端矛盾</font></h3><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在和后端手讨论完关于登录方面的问题之后，我发现我已经能够做好一个简单的js逻辑层了，这只需要稍微的判断一下就可以了😀😀😀，我以为这是我们矛盾就没了，没想到这只是个开始，因为我们这个项目在上一年答辩的时候将该程序的用途说的太过于强大，导致现在有部分功能在实际开发过程中很难去实现(但这我感觉还是其次的)，这是我分析的<strong>出现矛盾的原因</strong>：</p>
+<p> ◆ 「前端不懂后端，后端不懂前端」因为不了解对方的逻辑层面，导致前端以为传的一些数据后端就可以直接实现的功能实际上根本无法实现😅😅😅</p>
+<p> ◆「缺乏实际项目经验」因为之前的项目经验都是通过网上的视频，Github上的项目为模板进行学习，到了实际应用层面有些功能的代码不知如何实现😅😅😅</p>
+<p> ◆「缺乏讨论」项目开始之初没有写《需求分析》和《可行性分析》，也没有花时间和精力🧠讨论导致一些功能我按照我的想法来编写小程序的前端组件，通过用户的操作拿到参数给后端，但是后端根本没法写出相应的算法来接收参数的信息。😅😅😅</p>
+<p>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如：「安排训练计划」中的安排具体每一周的哪一天是可以用来训练，那些天是不做训练，这个方面我和习学长进行讨论根据 上一年的资料，以及实际情况(一个人是不可以连续多天进行高强度的锻炼，他需要适当的休息)，所以我打算弄出个类似于成熟的健身平台“keep”的训练计划界面如下：</p>
+<p><img src="https://7.dusays.com/2021/03/11/ebf3646dde785.png"></p>
+<p>(具体代码&lt;未完待续&gt;)</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户可根据自己的实际情况通过多项选择按钮，我也写了相应的逻辑层:用户点击“立即添加计划”的时候将会触发事件，那个事件会遍历一遍选择器把用户选择的一周中的天数通过字符串的方法(例如：用户选择了“星期一”，“星期二”，“星趣三”，“星期四”)，然后我会根据这个情况打印出字符串“1234”， 传给后端，后端再通过这个数据结合计划的周期，进行相应的在计划日历上的显示，如图：</p>
+<p><img src="https://7.dusays.com/2021/03/11/4edcd51dfa868.png"></p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是似乎想实现这一步极其的困难🙃，许多方面的问题都是问号，例如如何清楚的表达在数据库？，如何接收我传到后端的参数？这就是这个项目的最大阻力，误解和矛盾无处不在(而我还在这里写文章不去好好做项目😭😭😭)，总之仁者见仁智者见智吧！！！</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后续我会更新博客(未完待续)！！！</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比赛完我会出后期</p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

@@ -1,0 +1,167 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      手把手教你整可道云KodExplorer网盘 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      手把手教你整可道云KodExplorer网盘
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <p>在此感谢刘璎桥学姐，不是她我还不知道这回事呢</p>
+<p>同样感谢一名在知乎上的博主”知大师”，我的文章最多成为他的补充，细讲一些我遇到的坑避免大家在坑中无法自拔</p>
+<h3 id="1-先搞个服务器"><a href="#1-先搞个服务器" class="headerlink" title="1.先搞个服务器"></a>1.先搞个服务器</h3><p>首先在服务器上装上宝塔Liunx面板，大概的意思就是服务器上Liunx更好操作，而操作面板就会放在一个网页上，非常的方便啊，如何安装呢？<br>一行代码就够了</p>
+<p>(服务器系统最好弄<strong>Liunx</strong>，后面的宝塔在Liunx上特别好弄)</p>
+<span id="more"></span>
+
+<p>在此感谢刘璎桥学姐，不是她我还不知道这回事呢</p>
+<p>同样感谢一名在知乎上的博主”知大师”，我的文章最多成为他的补充，细讲一些我遇到的坑避免大家在坑中无法自拔</p>
+<h3 id="1-先搞个服务器-1"><a href="#1-先搞个服务器-1" class="headerlink" title="1.先搞个服务器"></a>1.先搞个服务器</h3><p>首先在服务器上装上宝塔Liunx面板，大概的意思就是服务器上Liunx更好操作，而操作面板就会放在一个网页上，非常的方便啊，如何安装呢？<br>一行代码就够了</p>
+<p>(服务器系统最好弄<strong>Liunx</strong>，后面的宝塔在Liunx上特别好弄)</p>
+<h3 id="2-搞个宝塔"><a href="#2-搞个宝塔" class="headerlink" title="2.搞个宝塔"></a>2.搞个宝塔</h3><p>注意：是指这是命令行，要安装个可以远程控制服务器的软件，好像也可以在网页上控制，反正在服务器上输入命令就行了。</p>
+<p>Centos安装命令：</p>
+<pre><code>yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+</code></pre>
+<p>or</p>
+<p>Centos/Ubuntu/Deepin安装命令：</p>
+<pre><code>curl -sSO http://download.bt.cn/install/new_install.sh &amp;&amp; bash new_install.sh
+</code></pre>
+<p>(小声地说“其实我也不懂什么Centos，我只认识Deepin，只管进去就对了”)</p>
+<p>遇到第一个问题直接Y</p>
+<p><img src="https://i.loli.net/2020/10/10/DSdkGA7hETCrfFu.png"></p>
+<p>然后注意这里有个小坑，就是端口的问题，这里的坑困扰了我好久，后面还会碰到</p>
+<p><img src="https://i.loli.net/2020/10/10/ZS5sUyLev4xb3CK.png"></p>
+<p>出现这个情况就是因为没搞好端口，我们要去服务器上新建一个端口，它上面也说很清楚，就是8888端口的问题，别问为什么，他就是只认8888端口，所以我们就新建一个8888端口给他就行了</p>
+<p>以阿里云为例，先点击”<strong>网络与安全</strong>“，然后就弹出“<strong>安全组</strong>”，找到你的服务器，这里就点击“<strong>配置规则</strong>”</p>
+<p><img src="https://i.loli.net/2020/10/10/mciewjFJSvqXfCn.png"></p>
+<p>打开安全组规则</p>
+<p><img src="https://i.loli.net/2020/10/10/LAYR16KmoBcVvpX.png"></p>
+<p>找到“添加安全组规则”，然后我们就可以添加新的端口了，端口不添加就完不成，在图中圈出来的那几个端口是一开始就给你的端口，然后我们就新建端口。</p>
+<p><img src="https://i.loli.net/2020/10/10/AsFujW514N7ZCn3.png"></p>
+<p>注意圈起来的那几个框框，你就照着我这里填就完事了</p>
+<h3 id="3-登录宝塔，一键部署有道云"><a href="#3-登录宝塔，一键部署有道云" class="headerlink" title="3.登录宝塔，一键部署有道云"></a>3.登录宝塔，一键部署有道云</h3><p>然后咱们就可以用之前的账号登录，进去就会有几个下载任务，让他下载，下载完成后来一键部署可道云<br><img src="https://i.loli.net/2020/10/10/ulPqEnSbXZfi5dy.png"></p>
+<p>在部署的时候，你会进入</p>
+<p><img src="https://i.loli.net/2020/10/10/6fPbroaYGpiKE2N.png"></p>
+<p>注意那个框框，这是第二个坑，先重复弄端口的过程，随便新建个端口比如7777/7777，然后另外一个框就填0.0.0.0/0，就行了。</p>
+<p>然后把你新弄的端口填上去，就完事了，就可以登录有道云了</p>
+<p><img src="https://i.loli.net/2020/10/10/XCibDQ21JpP8mML.png"></p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

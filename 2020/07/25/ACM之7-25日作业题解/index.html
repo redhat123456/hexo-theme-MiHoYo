@@ -1,0 +1,359 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      ACM之7-25日作业题解 [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      ACM之7-25日作业题解
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="1-A-六皇后"><a href="#1-A-六皇后" class="headerlink" title="1.A:六皇后"></a>1.A:六皇后</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>一个如下的 6×6 的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列有且只有一个，每条对角线（包括两条主对角线的所有平行线）上至多有一个棋子。</p>
+<p>行号 1 2 3 4 5 6</p>
+<p>列号 2 4 6 1 3 5</p>
+<p>这只是棋子放置的一个解。请编一个程序找出所有棋子放置的解。<br>并把它们以上面的序列方法输出，解按字典顺序排列。<br>请输出前 3 个解。最后一行是解的总个数。</p>
+<span id="more"></span>
+<h3 id="1-A-六皇后-1"><a href="#1-A-六皇后-1" class="headerlink" title="1.A:六皇后"></a>1.A:六皇后</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>一个如下的 6×6 的跳棋棋盘，有六个棋子被放置在棋盘上，使得每行、每列有且只有一个，每条对角线（包括两条主对角线的所有平行线）上至多有一个棋子。</p>
+<p><img src="https://m.qpic.cn/psc?/V52Vlkmp0UKcHq32tSnz0eNPJB0ivnci/ruAMsa53pVQWN7FLK88i5rd.bNN1UthtqFpZJHO8EACLCsu18s2Cdq6L33UVuZdY9E9wFo1HqT6gr62ELJhavonC9CtzEy*SbPDqSI4LpHE!/mnull&bo=6gDIAAAAAAADBwA!&rf=photolist&t=5"><br>上面的布局可以用序列 2 4 6 1 3 5 来描述，第 i个数字表示在第i行的相应位置有一个棋子，如下：</p>
+<p>行号 1 2 3 4 5 6</p>
+<p>列号 2 4 6 1 3 5</p>
+<p>这只是棋子放置的一个解。请编一个程序找出所有棋子放置的解。<br>并把它们以上面的序列方法输出，解按字典顺序排列。<br>请输出前 3 个解。最后一行是解的总个数。</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>一行一个正整数 n，6≤n≤13，表示棋盘是 nxn大小的</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>前三行为前三个解，每个解的两个数字之间用一个空格隔开。第四行只有一个数字，表示解的总数。</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>6
+</code></pre>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2 4 6 1 3 5
+3 6 2 5 1 4
+4 1 5 2 6 3
+4
+</code></pre>
+<h4 id="参考程序-自己打的"><a href="#参考程序-自己打的" class="headerlink" title="参考程序(自己打的)"></a>参考程序(自己打的)</h4><pre><code>#include&lt;iostream&gt;
+using namespace std;
+int count = 0;
+int chess[6][6]=&#123;0&#125;;
+int notDanger(int row,int col )&#123;
+    int i,k;
+    for(i=0;i&lt;6;i++)&#123;
+        if(chess[i][col]==1)
+        return 0;
+    &#125;
+    for(i=row,k=col;i&gt;=0&amp;&amp;k&gt;=0;i--,k--)
+    if(chess[i][k]==1)
+    return 0;
+    
+    for(i=row,k=col;i&gt;=0&amp;&amp;k&lt;6;i--,k++)
+    if(chess[i][k]==1)
+    return 0;
+    
+    return 1;
+&#125;
+
+void Print()&#123;
+    int i,j;
+    for(i=0;i&lt;6;i++)&#123;
+        for(j=0;j&lt;6;j++)&#123;
+            if(chess[i][j]==1)
+            cout&lt;&lt;j+1&lt;&lt;&quot; &quot;;
+        &#125;
+    &#125;
+    cout&lt;&lt;endl;
+&#125;
+void EightQueen( int row )&#123;
+    int col;
+    if( row&gt;5 )                       &#123;
+        Print();                      
+        count++;
+        return ;&#125;
+</code></pre>
+<p>题解：写得十分长，但是该有的东西还是有的，比如判断的函数，还有输出以及循环的函数，这里没用到搜索，只是枚举，详细请见ACM之“八皇后”</p>
+<h3 id="2-B-东南西北"><a href="#2-B-东南西北" class="headerlink" title="2.B:东南西北"></a>2.B:东南西北</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>给出起点和终点的坐标及接下来T个时刻的风向(东南西北)，每次可以选择顺风偏移1个单位或者停在原地。求到达终点的最少步数。</p>
+<p>如果无法偏移至终点，输出“-1”。</p>
+<h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><p>第一行两个正整数x1,y1，表示小明所在位置。</p>
+<p>第二行两个正整数x2,y2，表示小明想去的位置。</p>
+<p>第三行一个整数T，表示T个时刻。1&lt;=T&lt;=50</p>
+<p>第四至第N+3行，每行一个字符，表示风向，即东南西北的英文单词的首字母</p>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><p>最少走多少步。</p>
+<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>1 1
+2 2
+5
+E
+N
+W
+W
+N
+</code></pre>
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>2
+</code></pre>
+<h4 id="参考程序"><a href="#参考程序" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include &lt;iostream&gt;
+using namespace std;
+int x,y,x1,y1,n,s=0;
+char a;
+int l=0;
+int main()
+&#123;
+    cin&gt;&gt;x&gt;&gt;y&gt;&gt;x1&gt;&gt;y1;
+    cin&gt;&gt;n;
+    if(x==x1&amp;&amp;y==y1)&#123;cout&lt;&lt;&#39;0&#39;;return 0;&#125;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        cin&gt;&gt;a;
+        if(x1-x&gt;0&amp;&amp;a==&#39;E&#39;)x++,s++;
+        else if(x1-x&lt;0&amp;&amp;a==&#39;W&#39;)x--,s++;
+        if(y1-y&gt;0&amp;&amp;a==&#39;N&#39;)y++,s++;
+        else if(y1-y&lt;0&amp;&amp;a==&#39;S&#39;)y--,s++;
+    &#125;
+    if(x==x1&amp;&amp;y==y1)cout&lt;&lt;s;
+    else cout&lt;&lt;&quot;-1&quot;;
+    return 0;
+&#125;
+</code></pre>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>只要边输入边看这个方向是不是朝着终点。如果是，就动。否则就不动。</p>
+<h3 id="3-C-跳马"><a href="#3-C-跳马" class="headerlink" title="3.C:跳马"></a>3.C:跳马</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>中国象棋半张棋盘如图 11 所示。马自左下角 (0,0)(0,0) 向右上角 (m,n)(m,n) 跳。规定只能往右跳，不准往左跳。比如图 11 中所示为一种跳行路线，并将路径总数打印出来。</p>
+<p><img src="https://img.alicdn.com/imgextra/i2/0/O1CN01rKH4Rq1kCpWtyemq1_!!0-rate.jpg_400x400.jpg"></p>
+<h4 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h4><p>只有一行：两个数 n，m。0&lt;=n,m≤18</p>
+<h4 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h4><p>输出一个数：马从左下角到右上角的总方案数 total。</p>
+<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>4 8
+</code></pre>
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>37
+</code></pre>
+<h4 id="参考程序-1"><a href="#参考程序-1" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include &lt;stdio.h&gt;
+#include &lt;queue&gt;
+using namespace std;
+int dx[4]= &#123;1, 2, 1, 2&#125;;
+int dy[4]= &#123;2, 1, -2, -1&#125;;//四种走法
+int ways=0;//记录路线条数
+
+struct NODE &#123;
+    int x, y;
+&#125;;//记录路线上的点的坐标
+
+bool Valid (NODE h, int m, int n) &#123;
+    if ((h.x&lt;=m)&amp;&amp;(h.y&gt;=1)&amp;&amp;(h.y)&lt;=n)
+        return 1;
+    else
+        return 0;
+&#125;//判断下的这步棋是否符合规则
+
+bool bfs (NODE s, int m, int n) &#123;
+    queue&lt;NODE&gt;q;//建立路线队列
+    NODE now, next;//用于记录当前棋和进入下一步的棋
+    q.push(s);//起点入列
+    while (!q.empty()) &#123;
+        now = q.front();
+        q.pop();//取出当前棋子并出列
+        if ((now.x==m)&amp;&amp;(now.y==n)) &#123;
+            ways++;
+            continue;
+        &#125;//判断是否走到终点
+        for ( int i=0; i&lt;4; i++) &#123;
+            next.x=now.x+dx[i];
+            next.y=now.y+dy[i];//走出四种走法
+            if (Valid(next,m, n))
+                q.push(next);//如果有效则入列
+        &#125;
+    &#125;
+&#125;
+
+int main() &#123;
+    int m, n;
+    scanf (&quot;%d %d&quot;, &amp;m, &amp;n);
+    NODE s;
+    s= &#123;1,1&#125;;//起点
+    bfs (s, n, m);//开始搜索
+    printf (&quot;%d\n&quot;, ways);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>搜索中的经典问题，跟help庞学姐类似</p>
+<h3 id="4-D-奇怪的电梯"><a href="#4-D-奇怪的电梯" class="headerlink" title="4.D:奇怪的电梯"></a>4.D:奇怪的电梯</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>呵呵，有一天我做了一个梦，梦见了一种很奇怪的电梯。大楼的每一层楼都可以停电梯，而且第i层楼(1≤i≤N)上有一个数字K(0≤Ki≤N)。电梯只有四个按钮：开，关，上，下。上下的层数等于当前楼层上的那个数字。当然，如果不能满足要求，相应的按钮就会失灵。例如：3, 3 ,1 ,2 ,5代表了Ki<br>(K<br>1<br>=3,K<br>2<br>=3,…)，从11楼开始。在1楼，按“上”可以到4楼，按“下”是不起作用的，因为没有-2楼。那么，从A楼到B楼至少要按几次按钮呢？</p>
+<h4 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h4><p>共二行。</p>
+<p>第一行,为3个用空格隔开的正整数，<br>    表示N,A,B</p>
+<p> 第二行,为N个用空格隔开的非负整数，<br>    表示K_i</p>
+<h4 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h4><p>一行，即最少按键次数,若无法到达，则输出−1。</p>
+<h4 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a>样例输入</h4><pre><code>5 1 5
+3 3 1 2 5
+</code></pre>
+<h4 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a>样例输出</h4><pre><code>3
+</code></pre>
+<h4 id="参考程序-2"><a href="#参考程序-2" class="headerlink" title="参考程序"></a>参考程序</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+
+using namespace std;
+
+int main()
+&#123;
+    queue&lt;int&gt; q;  //BFS 实现用队列
+    vector&lt;int&gt; v; //保存每层按钮上的数值
+    vector&lt;int&gt; f; //到达每层最少的按键次数
+    vector&lt;bool&gt; flag;//标记值，表示每层是否被访问过，true代表访问过
+    int n;
+    int start, end;//开始层和结束层
+    int tmp;
+    cin &gt;&gt; n &gt;&gt; start &gt;&gt; end;
+    v.push_back(0);//方便起见，下标从1开始
+    f.push_back(0);
+    flag.push_back(false);
+    for (int  i = 1; i &lt;= n; i++)
+    &#123;
+        cin &gt;&gt; tmp;
+        v.push_back(tmp);
+        if(i == start)
+            f.push_back(0);//初始化,start层开始为按0次,其余层为-1次
+        else
+            f.push_back(-1);
+        flag.push_back(false);
+    &#125;
+    q.push(start);
+
+    while (!q.empty()&amp;&amp; !flag.at(q.front()))//队列不为空，切第q.front()层没有被访问过
+    &#123;
+        flag.at(q.front()) = true;
+        int next = q.front() + v.at(q.front());
+        if (next &lt;= n) //上楼
+        &#123;
+            q.push(next);
+            f.at(next) = f.at(q.front()) + 1;//记下到达每层最少的按键次数
+            if (next == end) //找到end层，退出while循环
+            &#123;
+                break;
+            &#125;
+        &#125;
+        next = q.front() - v.at(q.front());
+        if (next &gt;= 1)//下楼
+        &#123;
+            q.push(next);
+            f.at(next) = f.at(q.front()) + 1;
+            if (next == end)//找到end层，退出while循环
+            &#123;
+                break;
+            &#125;
+        &#125;
+        q.pop();
+    &#125;
+    cout &lt;&lt; f.at(end) &lt;&lt; endl;
+
+    return 0;
+&#125;
+</code></pre>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><p>动态分配内存，采用STL的vector容器来解答，也可以简单的用数组来实现</p>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>

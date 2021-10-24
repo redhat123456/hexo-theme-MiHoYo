@@ -1,0 +1,154 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！ >
+  <meta name="keywords" content=hexo,theme,MiHoYo >
+
+  <head>
+    <title>
+      竞赛中C++常用函数（打ACM和CCSP的同学快看） [ Tanger&#39;s blog ]
+    </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    <link rel="stylesheet" href="/css/header.css">
+<div class="header">
+  <div class="logo">
+    <span class="pull-left">
+      <a id="site-name" href="/">
+        Tanger&#39;s blog
+      </a>
+    </span>
+  </div>
+  <ul class="nav-list">
+    
+      <li>
+        <a href="/">
+          首页
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about">
+          关于
+        </a>
+      </li>
+      
+  </ul>
+</div>
+
+      <!--<link rel="stylesheet" href="/css/top-header.css">
+<div id="top-bar" class="fixed">
+
+  <a class="goto-top" href="#"></a>
+  <ul class="bar-list bar-list-1">
+    
+      <li>
+        <p>
+          <a href="/">
+            <text class="bar-text bar-p1">
+              首页
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          <a href="/about">
+            <text class="bar-text bar-p1">
+              关于
+            </text>
+            <text class="bar-text bar-p2"></text>
+          </a>
+          <text class="bar-p3">/</text>
+        </p>
+      </li>
+      
+  </ul>
+</div>-->
+
+        <div id="content-outer">
+          <div class="content-inner">
+            <link rel="stylesheet" href="/css/post.css">
+<div class="posts">
+  <a href="/index.html"><i class="fa fa-home
+replay-btn" aria-hidden="true"></i></a>
+  <div class="post-title">
+    <p>
+      竞赛中C++常用函数（打ACM和CCSP的同学快看）
+    </p>
+    <hr>
+  </div>
+  <div class="post-content">
+    <h3 id="C与C-的区别"><a href="#C与C-的区别" class="headerlink" title="C与C++的区别"></a>C与C++的区别</h3><p>   虽然同为C大家族的成员，但是C++和C用起来确实是有较大的差别，例如C++中有许多的函数可以调用，而C的大多数函数需要自己定义，在C++中我们可以尽情的使用函数库，下面就给大家总结竞赛常用的C++函数，希望可以帮助到初学者</p>
+<h3 id="基本函数篇"><a href="#基本函数篇" class="headerlink" title="基本函数篇"></a>基本函数篇</h3><h4 id="sort-a-a-n"><a href="#sort-a-a-n" class="headerlink" title="sort(a,a+n)"></a>sort(a,a+n)</h4><p>&nbsp;&nbsp;sort()是C++中对指定区间内所有元素(对，你没看错，就是所有元素即使是字符元素也行)进行排序的函数(默认为升序)。</p>
+<p>区间表达就使用<strong>地址</strong>来进行的，例如给定一个数组a[n]，我们想要对他排序就</p>
+<pre><code>sort(a,a+n);//给个区间就行了
+</code></pre>
+<p>像这样就行了，如果你想要倒序也很简单，直接调用函数</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+bool cmp(int a,int b)&#123;
+    return a&gt;b;
+&#125;//自定义函数
+int main()&#123;
+    int a[n]=&#123;...&#125;;
+    sort(a,a+n,cmp);//第三个参数自己定义，实现从大到小
+    return 0;
+&#125;
+</code></pre>
+<p>如果是字符串的排序</p>
+<pre><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main()&#123;
+   
+&#125;
+</code></pre>
+
+  </div>
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: '#vcomments',
+      appId: "UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz",
+      appKey: "Qje6lzzuG0g2DPuVk0i1ix3s"
+    })
+  </script>
+
+</div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="/css/footer.css">
+<div class="bottom-outer">
+  <div class="copyright">©2021 - 2021 By Tanger</div>
+  <div class="framework-info">
+    <span>Power by</span>
+    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme by</span>
+    <a class="a2" href="">MiHoYo</a>
+  </div>
+</div>
+
+          
+            <!-- scripts list from theme config.yml -->
+            
+              <script src="/js/MiHoYo.js"></script>
+              
+                
+
+  </body>
+
+  </html>
