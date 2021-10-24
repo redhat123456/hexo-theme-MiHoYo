@@ -162,6 +162,12 @@ words: Your Words
   > - 【墙】[Hexo 主题开发经验杂谈 | MARKSZ の Blog](https://molunerfinn.com/make-a-hexo-theme/)
   > - 【墙】[Hexo 主题开发指南 | Peak Xin's Blog](https://xinyufeng.net/2019/04/15/hexo-theme-guide/)
 
+## 下一步实现的功能
+
+* 适应移动端
+* 加入背景图
+* 更新信息卡的效果
+
 ## 支援主题开发
 
 喜欢这个主题的话可以：
