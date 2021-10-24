@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="/css/nav.css">
 <div class="hd">
   <ol class="breadcrumb">
-    <% for (name in theme.menu1) { %>
-      <li><a class="ba" href="<%- url_for(theme.menu1[name]) %>">
+    <% for (name in theme.menu) { %>
+      <li><a class="ba" href="<%- url_for(theme.menu[name]) %>">
           <%= name %>
         </a></li>
       <% } %>

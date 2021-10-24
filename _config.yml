@@ -3,13 +3,22 @@ language: en
 
 menuname: Tanger's blog
 
-# main menu navigation
-menu1:
-  关于我👀: /about
-  访问主站🎉: https://liuxunzhuo.tech
-  GitHub🐒: https://github.com/xunzhuo
+# 你的昵称 | Your Name
+author: Your Name
 
+# main menu navigation
 menu:
+  关于我👀: /about
+  访问主站🎃: http://tanger.cloud/
+  GitHub🧨: https://github.com/redhat123456
+
+## 网站描述
+description: 嘿，我是Tanger～这是我的子站，用于展示写的Hexo主题：MiHoYo。欢迎访问！
+
+## 网站关键词：用英文逗号分割
+keywords: hexo,theme,MiHoYo
+
+topmenu:
   首页: /
   关于: /about
 # blog头像
@@ -19,13 +28,10 @@ logo_title: Hexo Theme
 #标语 | Your Slogan
 words: Your Words
 
-# 你的昵称 | Your Name
-author: Your Name
-
 # 滑动顶部框
-topmenu:
-  首页  index: /
-  关于  about: /about
+# topmenu:
+#  首页  index: /
+#  关于  about: /about
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -39,6 +45,6 @@ scripts:
 ## 做了域名限制，请改成自己的 KEY
 ## 若关闭valine 设置enable为false∂
 valine:
-  enable: true
-  appId: UJXMQNzVElAMz5AFSaakRH2z-gzGzoHsz
-  appKey: Qje6lzzuG0g2DPuVk0i1ix3s
+  enable: false
+  appId:
+  appKey:

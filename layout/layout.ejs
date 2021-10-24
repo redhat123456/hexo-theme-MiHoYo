@@ -5,19 +5,17 @@
 
   <!DOCTYPE html>
   <html lang="<%=config.language%>">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content=<%- theme.description %> >
+  <meta name="keywords" content=<%- theme.keywords %> >
 
   <head>
-    <meta charset="UTF-8">
     <title>
       <%=pageTitle%>
     </title>
-    <% if (theme.stylesheets !==undefined && theme.stylesheets.length> 0) { %>
-      <!-- stylesheets list from _config.yml -->
-      <% theme.stylesheets.forEach(url=> { %>
-        <link rel="stylesheet" href="<%=url%>">
-
-        <% }); %>
-          <% } %>
   </head>
 
   <body>
