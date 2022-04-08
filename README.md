@@ -16,6 +16,8 @@ PC 端：
 
 ![预览图片](https://i.loli.net/2021/10/24/bNlAoIfzGPQJcnt.png)
 
+![gif](https://github.com/redhat123456/pohots/blob/master/gif/1.gif?raw=true)
+
 Tanger: http://mihoyo.tanger.ltd/
 
 如果您使用了该主题并想展示你的 blog~，欢迎在<a href="https://github.com/redhat123456/hexo-theme-MiHoYo/issues">issue</a>给我留言，我会把你展示出来 🎃
