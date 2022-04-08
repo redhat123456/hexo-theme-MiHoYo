@@ -16,6 +16,8 @@ PC 端：
 
 ![预览图片](https://i.loli.net/2021/10/24/bNlAoIfzGPQJcnt.png)
 
+手机端：
+
 <p align="center"> <image src="https://github.com/redhat123456/pohots/blob/master/gif/1.gif?raw=true"></image> </p>
 
 Tanger: http://mihoyo.tanger.ltd/
