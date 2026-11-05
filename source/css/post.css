@@ -6,3 +6,31 @@
 .post-title {
   font-size: 18px;
 }
+
+.replay-btn {
+  display: inline-block;
+  margin: 0 0 1.5rem;
+}
+
+.post-date {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--mihoyo-text-sub);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .content-inner {
+    width: 100%;
+  }
+
+  .posts {
+    width: calc(100% - 36px);
+    padding: 2rem 1.25rem;
+  }
+
+  .post-title p {
+    font-size: 1.35rem;
+  }
+}

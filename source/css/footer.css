@@ -1,27 +1,109 @@
 .bottom-outer {
-  opacity: 1;
-  display: block;
-  transform: translateY(0px);
-  padding: 2rem 1rem;
-  color: black;
-  text-align: center;
-  font-family: Lato, Helvetica Neue For Number, -apple-system,
-    BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-.footer-separator {
-  margin: 0 0.2rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  gap: 3rem;
+  padding: 3rem max(2rem, calc((100% - 1120px) / 2));
+  border-top: 3px solid #252a32;
+  background: #070809;
+  color: #d7dbe2;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
 }
 
-.framework-info a {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.footer-main,
+.footer-details {
+  min-width: 0;
+}
+
+.footer-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #f7f9fc;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   text-decoration: none;
 }
-.a1:hover {
-  color: red;
+
+.footer-mark {
+  display: inline-flex;
+  width: 2.7rem;
+  height: 2.7rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #47bdf2;
+  border-radius: 50%;
+  color: #47bdf2;
+  font-size: 1.7rem;
+  line-height: 1;
 }
-.a2:hover {
-  color: green;
+
+.footer-tagline {
+  max-width: 25rem;
+  margin: 0.9rem 0 1.5rem;
+  color: #8c939e;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.footer-framework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  color: #858b95;
+  font-size: 0.78rem;
+}
+
+.footer-framework a {
+  color: #b7c0ce;
+  text-decoration: none;
+}
+
+.footer-framework a:hover,
+.footer-links a:hover {
+  color: #47bdf2;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.footer-links a {
+  color: #e3e7ed;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a + a::before {
+  margin-right: 1rem;
+  color: #47505d;
+  content: '|';
+}
+
+.footer-notices {
+  color: #a7adb7;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.footer-notices p {
+  margin: 0.25rem 0;
+}
+
+.copyright {
+  margin: 1rem 0 0;
+  color: #757c87;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 700px) {
+  .bottom-outer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2.25rem 1.25rem;
+  }
 }

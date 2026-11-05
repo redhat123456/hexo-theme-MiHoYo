@@ -9,7 +9,7 @@ author: Your Name
 # main menu navigation
 menu:
   关于我👀: /about
-  访问主站🎃: http://tanger.cloud/
+  访问主站🎃: http://redhat123456.github.io/
   GitHub🧨: https://github.com/redhat123456
 
 topmenu:
@@ -31,6 +31,11 @@ logo_title: Hexo Theme
 #标语 | Your Slogan
 words: Your Words
 
+# footer links and notices are optional; add only information applicable to your site
+footer:
+  links: []
+  notices: []
+
 # 滑动顶部框
 # topmenu:
 #  首页  index: /
@@ -45,8 +50,17 @@ scripts:
   - /js/MiHoYo.js
 
 # 评论系统 | Comments
-## 做了域名限制，请改成自己的 KEY
-## 若关闭valine 设置enable为false
+## 基于 GitHub Issues 的评论系统 utterances（https://utteranc.es）
+## 使用前请先在 https://utteranc.es/apps 将 utterances GitHub App 安装到评论仓库
+## repo 格式：用户名/仓库公仓（Issues 必须开启）
+comments:
+  enable: true
+  repo: redhat123456/hexo-theme-MiHoYo
+  issue_term: pathname
+  label: ✨评论
+  theme: github-light
+
+# 旧版 Valine 评论系统（已停用，保留配置字段向后兼容）
 valine:
   enable: false
   appId:

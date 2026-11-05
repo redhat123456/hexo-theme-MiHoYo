@@ -11,7 +11,19 @@
 //         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //         See the License for the specific language governing permissions and
 // limitations under the License.
-if (theme.valine.enable == true) { %>
+if (theme.comments && theme.comments.enable) { %>
+  <div class="comments">
+    <p class="comments-title">💬 说点什么吧～（基于 GitHub Issues 的评论，需登录 GitHub）</p>
+    <script src="https://utteranc.es/client.js"
+            repo="<%= theme.comments.repo %>"
+            issue-term="<%= theme.comments.issue_term || 'pathname' %>"
+            label="<%= theme.comments.label || '✨评论' %>"
+            theme="<%= theme.comments.theme || 'github-light' %>"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+<% } else if (theme.valine && theme.valine.enable == true) { %>
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <div id="vcomments"></div>
   <script>

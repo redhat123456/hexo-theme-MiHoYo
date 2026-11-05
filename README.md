@@ -136,6 +136,21 @@ words: Your Words
 
 可以根据对应的信息进行修改
 
+### 页脚设置
+
+页脚采用深色样式。可在主题 `_config.yml` 的 `footer` 中配置适用于自己网站的链接和说明；未配置链接时会使用 `menu` 中的导航链接。
+
+```yaml
+footer:
+  links:
+    - label: 联系作者
+      url: /about/
+  notices:
+    - 此处填写适用于你的网站的备案或公告信息
+```
+
+`links` 中的 `label` 是显示文字，`url` 是站内路径或完整网址；`notices` 为可选的说明文本。请仅填写真实、适用于本站的信息。
+
 ## 评论系统
 
 本主题支持[Valine](https://valine.js.org/) 。

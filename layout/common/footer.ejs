@@ -1,11 +1,42 @@
-<link rel="stylesheet" href="/css/footer.css">
-<div class="bottom-outer">
-  <div class="copyright">©2021 - 2021 By Tanger</div>
-  <div class="framework-info">
-    <span>Power by</span>
-    <a class="a1" href="https://hexo.io/">Hexo</a>
-    <span class="footer-separator">|</span>
-    <span>Theme by</span>
-    <a class="a2" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
+<link rel="stylesheet" href="<%= url_for("css/footer.css") %>">
+<footer class="bottom-outer">
+  <div class="footer-main">
+    <a class="footer-wordmark" href="<%= url_for("/") %>">
+      <span class="footer-mark" aria-hidden="true">M</span>
+      <span><%= theme.logo_title || theme.menuname %></span>
+    </a>
+    <p class="footer-tagline"><%= theme.description || '' %></p>
+    <div class="footer-framework">
+      <span>Powered by</span>
+      <a href="https://hexo.io/">Hexo</a>
+      <span class="footer-separator">·</span>
+      <span>Theme</span>
+      <a href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
+    </div>
   </div>
-</div>
+
+  <div class="footer-details">
+    <nav class="footer-links" aria-label="页脚导航">
+      <% if (theme.footer && theme.footer.links && theme.footer.links.length) { %>
+        <% theme.footer.links.forEach(link => { %>
+          <a href="<%= url_for(link.url) %>"><%= link.label %></a>
+        <% }); %>
+      <% } else { %>
+        <% Object.keys(theme.menu || {}).forEach(label => { %>
+          <a href="<%= url_for(theme.menu[label]) %>"><%= label %></a>
+        <% }); %>
+      <% } %>
+    </nav>
+    <% if (theme.footer && theme.footer.notices && theme.footer.notices.length) { %>
+      <div class="footer-notices">
+        <% theme.footer.notices.forEach(notice => { %>
+          <p><%= notice %></p>
+        <% }); %>
+      </div>
+    <% } %>
+    <p class="copyright">
+      ©2021–<script>document.write(new Date().getFullYear())</script>
+      <%= config.author || theme.author || theme.menuname %>
+    </p>
+  </div>
+ </footer>

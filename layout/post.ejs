@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="<%= url_for("css/post.css") %>">
 <div class="posts">
-  <a href="/index.html"><i class="fa fa-home
-replay-btn" aria-hidden="true"></i></a>
+  <a class="replay-btn" href="<%= url_for("index.html") %>">返回新闻列表</a>
   <div class="post-title">
     <p>
       <%= page.title %>
     </p>
     <hr>
+    <time class="post-date" datetime="<%= page.date.toISOString() %>"><%= date(page.date, 'YYYY-MM-DD') %></time>
   </div>
   <div class="post-content">
     <%- page.content %>

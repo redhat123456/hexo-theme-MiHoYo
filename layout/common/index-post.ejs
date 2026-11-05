@@ -1,24 +1,54 @@
-<link rel="stylesheet" href="/css/index-post.css">
-<% if (page.posts.length> 0) { %>
-  <div class="recent-posts">
-    <p class="p1">文章列表</p>
-    <div class="recent-post-item">
-      <ul class="notice-list" id="notice-1">
-        <% page.posts.sort('date', -1).limit(10).each(post=> { %>
-          <li>
-            <a href="<%=url_for(post.path)%>">
-              <%=post.title%>
-            </a>
-            <p class="notice-time" datetime="<%=post.date.toJSON()%>">
-              <%=date(post.date)%>
-            </p>
-          </li>
-          <% }); %>
-      </ul>
-      <div class="list-bottom">
-        <%- paginator({ escape: false }) %>
-      </div>
+<link rel="stylesheet" href="<%= url_for("css/index-post.css") %>">
+<% if (page.posts.length > 0) { %>
+  <section class="news-home" aria-labelledby="news-heading">
+    <div class="news-heading" id="news-heading">
+      <span class="news-kicker">NEWS / 最新动态</span>
+      <h2>新闻动态</h2>
     </div>
 
-  </div>
-  <% } %>
+    <% page.posts.sort('date', -1).limit(1).each(post => { %>
+      <article class="news-feature">
+        <div class="news-feature-copy">
+          <time class="news-date" datetime="<%= post.date.toISOString() %>">
+            <span><%= date(post.date, 'MM/DD') %></span>
+            <%= date(post.date, 'YYYY') %>
+          </time>
+          <h1><a href="<%= url_for(post.path) %>"><%= post.title %></a></h1>
+          <p class="news-summary"><%= truncate(strip_html(post.excerpt || post.content || ''), { length: 180 }) %></p>
+          <a class="news-read-more" href="<%= url_for(post.path) %>">
+            READ MORE <span aria-hidden="true">❯❯❯</span>
+          </a>
+        </div>
+
+        <a class="news-feature-art" href="<%= url_for(post.path) %>" aria-label="<%= post.title %>">
+          <% if (post.cover || post.thumbnail) { %>
+            <img src="<%= url_for(post.cover || post.thumbnail) %>" alt="<%= post.title %>" loading="lazy">
+          <% } else { %>
+            <span class="news-art-label">TECH OTAKUS SAVE THE WORLD</span>
+            <span class="news-art-title"><%= post.title %></span>
+            <span class="news-art-index" aria-hidden="true">NEWS</span>
+          <% } %>
+        </a>
+      </article>
+    <% }); %>
+
+    <% if (page.posts.length > 1) { %>
+      <div class="news-more-list">
+        <h2>更多新闻</h2>
+        <ul class="notice-list">
+          <% page.posts.sort('date', -1).skip(1).limit(9).each(post => { %>
+            <li>
+              <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+              <time class="notice-time" datetime="<%= post.date.toISOString() %>"><%= date(post.date) %></time>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    <% } %>
+
+    <div class="list-bottom">
+      <%- paginator({ escape: false }) %>
+      <a class="more-news-label" href="<%= url_for("archives/") %>">查看更多新闻</a>
+    </div>
+  </section>
+<% } %>
